@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+.vscode/
+
+# Build files
+dist/
+.serverless/
+
+# Testing
+coverage/
+
+# local files
+npm-debug.log*
+sh.exe.stackdump
+.DS_Store
+**/.DS_Store
