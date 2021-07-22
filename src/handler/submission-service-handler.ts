@@ -9,8 +9,8 @@ const submissionServiceHandler: SQSHandler = async (
   callback: Callback<void>
 ): Promise<void> => {
   try {
-    const { body }: { body: string } = event.Records[0];
-    OrchestrationService.processApplicationSubmission;
+    const { body: eventBody }: { body: string } = event.Records[0];
+    OrchestrationService.processApplicationSubmission(eventBody);
 
     callback();
   } catch (error) {
