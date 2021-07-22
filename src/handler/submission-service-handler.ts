@@ -9,13 +9,15 @@ const submissionServiceHandler: SQSHandler = async (
   callback: Callback<void>
 ): Promise<void> => {
   try {
+    // This is assuming the message/record will always come in one item.
+    // Need to test as the application submission get larger
     const { body: eventBody }: { body: string } = event.Records[0];
     OrchestrationService.processApplicationSubmission(eventBody);
 
     callback();
   } catch (error) {
     errorLogger("Handler/SubmissionServiceHandler", error);
-    callback("Failure occurred");
+    callback("Failure occurred. Sending to DLQ");
   } finally {
     return;
   }
