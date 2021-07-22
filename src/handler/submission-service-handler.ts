@@ -1,4 +1,5 @@
 import { Callback, Context, SQSEvent, SQSHandler } from "aws-lambda";
+import { OrchestrationService } from "../services/orchestration-service";
 
 import { errorLogger } from "../utils/error-logger";
 
@@ -8,16 +9,16 @@ const submissionServiceHandler: SQSHandler = async (
   callback: Callback<void>
 ): Promise<void> => {
   try {
-    console.log("Hi there");
-    console.log(event);
-    // callback();
+    const { body }: { body: string } = event.Records[0];
+    OrchestrationService.processApplicationSubmission;
+
+    callback();
   } catch (error) {
-    // errorLogger("Handler/SubmissionServiceHandler", error);
-    // callback();
+    errorLogger("Handler/SubmissionServiceHandler", error);
+    callback("Failure occurred");
   } finally {
-    // return;
+    return;
   }
-  throw new Error("Kaboom")!;
 };
 
 export { submissionServiceHandler };
