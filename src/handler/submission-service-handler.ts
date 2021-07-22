@@ -1,32 +1,23 @@
-import {
-  APIGatewayProxyEvent,
-  APIGatewayProxyHandler,
-  APIGatewayProxyResult,
-  Callback,
-  Context
-} from "aws-lambda";
+import { Callback, Context, SQSEvent, SQSHandler } from "aws-lambda";
 
-import { HandlerResponse } from "../models/handler-response";
 import { errorLogger } from "../utils/error-logger";
-import { responseBodyBuilder } from "../utils/response-body-builder";
 
-const submissionServiceHandler: APIGatewayProxyHandler = async (
-  _event: APIGatewayProxyEvent,
+const submissionServiceHandler: SQSHandler = async (
+  event: SQSEvent,
   _context: Context,
-  callback: Callback<APIGatewayProxyResult>
-): Promise<APIGatewayProxyResult> => {
+  callback: Callback<void>
+): Promise<void> => {
   try {
-    const response: HandlerResponse = responseBodyBuilder(201, "Success");
-
-    callback(null, response);
+    console.log("Hi there");
+    console.log(event);
+    // callback();
   } catch (error) {
-    errorLogger("Handler/SubmissionServiceHandler", error);
-    const response: HandlerResponse = responseBodyBuilder(500, "Failure");
-
-    callback(null, response);
+    // errorLogger("Handler/SubmissionServiceHandler", error);
+    // callback();
   } finally {
-    return;
+    // return;
   }
+  throw new Error("Kaboom")!;
 };
 
 export { submissionServiceHandler };

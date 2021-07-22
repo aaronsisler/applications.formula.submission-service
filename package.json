@@ -8,7 +8,9 @@
     "build": "tsc",
     "lint": "eslint \"./**/*.ts\"",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "deploy:beta": "npm run build && sls deploy --config=./deployment/serverless.beta.yml",
+    "delete:beta": "sls remove --config=./deployment/serverless.beta.yml"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.80",

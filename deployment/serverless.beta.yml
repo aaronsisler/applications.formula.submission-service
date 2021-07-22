@@ -1,0 +1,41 @@
+service: formula-submission-service
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: beta
+  region: us-east-1
+  logRetentionInDays: 7
+  iam:
+    role: arn:aws:iam::654918520080:role/APIG-LAMBDA-DDB
+
+functions:
+  submission-handler:
+    handler: dist/handler/index.handler
+    description: Function to handle incoming application submissions
+    events:
+      - sqs:
+          arn:
+            Fn::GetAtt:
+              - FormulaApplicationSubmissionQueue
+              - Arn
+
+resources:
+  Resources:
+    FormulaApplicationSubmissionQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "FORMULA_APPLICATION_SUBMISSION"
+        VisibilityTimeout: 30
+        MessageRetentionPeriod: 60
+        RedrivePolicy:
+          deadLetterTargetArn:
+            "Fn::GetAtt":
+              - ReceiverDeadLetterQueue
+              - Arn
+          maxReceiveCount: 1
+    ReceiverDeadLetterQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "FORMULA_APPLICATION_SUBMISSION_DLQ"
+        MessageRetentionPeriod: 1209600 # 14 days in seconds
