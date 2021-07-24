@@ -1,4 +1,5 @@
-// AWS
-const S3_UPLOAD_BUCKET_NAME = "formula-application-storage";
+// File Storage
+export const S3_UPLOAD_BUCKET_NAME = "formula-application-storage";
 
-export { S3_UPLOAD_BUCKET_NAME };
+// Database
+export const TABLE_NAME = "FORMULA_MAIN";
