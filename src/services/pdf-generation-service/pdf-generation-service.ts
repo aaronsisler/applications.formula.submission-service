@@ -1,10 +1,10 @@
 import PDFDocument from "pdfkit";
 import fs from "fs";
 
-import { ApplicationSubmission } from "../../models/application-submission";
+import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
 
 export class PdfGenerationService {
-  static generatePdf(applicationSubmission: ApplicationSubmission): any {
+  static generatePdf(applicationMarkupMapper: ApplicationMarkupMapper): any {
     const timeStamp: string = new Date(Date.now()).getTime().toString();
     const fileName = `${timeStamp}.pdf`;
     const documentPath = `/tmp/${fileName}`;
@@ -13,9 +13,6 @@ export class PdfGenerationService {
     pdfDocument.pipe(fs.createWriteStream(documentPath));
     pdfDocument
       .text("My Sample PDF Document")
-      .moveDown()
-      .moveDown()
-      .text(applicationSubmission.message)
       .moveDown()
       .moveDown()
       .text("Is this after?");
