@@ -1,1 +1,1 @@
-export { TEST_CONFIG } from "./config";
+export { S3_UPLOAD_BUCKET_NAME } from "./config";

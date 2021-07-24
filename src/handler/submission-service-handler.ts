@@ -12,7 +12,7 @@ const submissionServiceHandler: SQSHandler = async (
     // This is assuming the message/record will always come in one item.
     // Need to test as the application submission get larger
     const { body: eventBody }: { body: string } = event.Records[0];
-    OrchestrationService.processApplicationSubmission(eventBody);
+    await OrchestrationService.processApplicationSubmission(eventBody);
 
     callback();
   } catch (error) {

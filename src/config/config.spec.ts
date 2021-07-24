@@ -8,10 +8,10 @@ describe("config", () => {
   });
 
   it("should export the correct keys", () => {
-    expect(configKeys).toContain("TEST_CONFIG");
+    expect(configKeys).toContain("S3_UPLOAD_BUCKET_NAME");
   });
 
   it("should export the correct values", () => {
-    expect(config.TEST_CONFIG).toBeDefined();
+    expect(config.S3_UPLOAD_BUCKET_NAME).toBeDefined();
   });
 });

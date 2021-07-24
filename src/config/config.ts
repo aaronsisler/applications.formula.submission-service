@@ -1,4 +1,4 @@
-// Test
-const TEST_CONFIG = "TEST_CONFIG";
+// AWS
+const S3_UPLOAD_BUCKET_NAME = "formula-application-storage";
 
-export { TEST_CONFIG };
+export { S3_UPLOAD_BUCKET_NAME };

@@ -12,9 +12,14 @@
     "deploy:beta": "npm run build && sls deploy --config=./deployment/serverless.beta.yml",
     "delete:beta": "sls remove --config=./deployment/serverless.beta.yml"
   },
+  "dependencies": {
+    "aws-sdk": "^2.952.0",
+    "pdfkit": "^0.12.1"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.80",
     "@types/jest": "^26.0.24",
+    "@types/pdfkit": "^0.11.2",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",

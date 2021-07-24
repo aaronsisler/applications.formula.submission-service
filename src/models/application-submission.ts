@@ -1,1 +1,3 @@
-export interface ApplicationSubmission {}
+export interface ApplicationSubmission {
+  message: string;
+}

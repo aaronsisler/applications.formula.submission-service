@@ -7,11 +7,12 @@ provider:
   region: us-east-1
   logRetentionInDays: 7
   iam:
-    role: arn:aws:iam::654918520080:role/APIG-LAMBDA-DDB
+    role: arn:aws:iam::654918520080:role/LAMBDA-DDB-SQS-S3
 
 functions:
   submission-handler:
     handler: dist/handler/index.handler
+    role: arn:aws:iam::654918520080:role/LAMBDA-DDB-SQS-S3
     description: Function to handle incoming application submissions
     events:
       - sqs:
