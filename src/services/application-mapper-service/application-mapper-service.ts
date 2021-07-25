@@ -17,11 +17,9 @@ export class ApplicationMapperService {
     // Sequence number for ordering
     // Type for mapping to markup
     const applicationFields: ApplicationField[] =
-      await DatabaseService.getApplicationFields(
+      await new DatabaseService().getApplicationFields(
         applicationSubmission.applicationId
       );
-
-    console.log(applicationFields);
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {};
 

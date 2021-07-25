@@ -7,14 +7,14 @@ import { databaseKeyParser } from "../../utils/database-key-parser";
 import { errorLogger } from "../../utils/error-logger";
 
 export class DatabaseService {
-  private static documentClient: DynamoDB.DocumentClient;
+  private documentClient: DynamoDB.DocumentClient;
 
   constructor() {
     aws.config.update({ region: "us-east-1" });
-    DatabaseService.documentClient = new aws.DynamoDB.DocumentClient();
+    this.documentClient = new aws.DynamoDB.DocumentClient();
   }
 
-  static async getApplicationFields(
+  async getApplicationFields(
     applicationId: string
   ): Promise<ApplicationField[]> {
     try {
@@ -22,7 +22,7 @@ export class DatabaseService {
         KeyConditionExpression:
           "PartitionKey = :partitionKey AND begins_with ( SortKey , :sortKey )",
         ExpressionAttributeValues: {
-          ":partitionKey": applicationId,
+          ":partitionKey": `Application#${applicationId}`,
           ":sortKey": "ApplicationField"
         },
         TableName: TABLE_NAME

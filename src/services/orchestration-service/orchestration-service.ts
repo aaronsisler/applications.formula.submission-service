@@ -1,3 +1,4 @@
+import { ApplicationMapperService } from "../application-mapper-service";
 import { DocumentUploadService } from "../document-upload-service";
 import { MessageParserService } from "../message-parser-service";
 import { PdfGenerationService } from "../pdf-generation-service";
@@ -10,11 +11,14 @@ export class OrchestrationService {
       MessageParserService.parseMessage(eventBody);
 
     // Get the field labels etc. from DDB
-    // TODO
+    const applicationMarkupMapper =
+      await ApplicationMapperService.mapApplicationSubmission(
+        applicationSubmission
+      );
 
     // Build out the application pdf
     const { documentPath, fileName } = PdfGenerationService.generatePdf(
-      applicationSubmission
+      applicationMarkupMapper
     );
 
     // Push pdf to S3
