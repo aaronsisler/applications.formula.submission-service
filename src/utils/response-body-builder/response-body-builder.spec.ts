@@ -1,7 +1,7 @@
 import { responseBodyBuilder } from "./index";
 import { HandlerResponse } from "../../models/handler-response";
 
-describe("utils - Response Body Builder", () => {
+describe("utils/Response Body Builder", () => {
   let handlerResponse: HandlerResponse;
   const mockBody = { returned: "value" };
 

@@ -1,6 +1,6 @@
 import { databaseKeyParser } from "./index";
 
-describe("utils:databaseKeyParser", () => {
+describe("utils/Database Key Parser", () => {
   let databaseKey: string;
 
   beforeEach(() => {

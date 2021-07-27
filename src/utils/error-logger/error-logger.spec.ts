@@ -1,6 +1,6 @@
 import { errorLogger } from "./index";
 
-describe("utils - Error Logger", () => {
+describe("utils/Error Logger", () => {
   const mockCaller = "mock-caller";
   const mockErrorMessage = "mock-error-message";
   let consoleWarnSpy: jest.SpyInstance;
