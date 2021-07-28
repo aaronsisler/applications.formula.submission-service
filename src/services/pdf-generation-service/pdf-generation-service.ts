@@ -5,9 +5,11 @@ import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
 
 export class PdfGenerationService {
-  static generatePdf(applicationMarkupMapper: ApplicationMarkupMapper): any {
-    const timeStamp: string = new Date(Date.now()).getTime().toString();
-    const fileName = `${timeStamp}.pdf`;
+  static generatePdf(
+    applicationMarkupMapper: ApplicationMarkupMapper,
+    rawFileName: string
+  ): any {
+    const fileName = `${rawFileName}.pdf`;
     const documentPath = `/tmp/${fileName}`;
 
     const pdfDocument = new PDFDocument({ margin: 50 });

@@ -4,6 +4,8 @@ import { MessageParserService } from "../message-parser-service";
 import { PdfGenerationService } from "../pdf-generation-service";
 import { ApplicationSubmission } from "../../models/application-submission";
 import { timeElapsedLogger } from "../../utils/time-elapsed-logger";
+import { uuidGenerator } from "../../utils/uuid-generator";
+import { ApplicantUploadService } from "../applicant-upload-service";
 
 export class OrchestrationService {
   static async processApplicationSubmission(eventBody: string) {
@@ -25,8 +27,10 @@ export class OrchestrationService {
 
     // Build out the application pdf
     methodStartTime = Date.now();
+    const rawFileName = uuidGenerator();
     const { documentPath, fileName } = PdfGenerationService.generatePdf(
-      applicationMarkupMapper
+      applicationMarkupMapper,
+      rawFileName
     );
     timeElapsedLogger(methodStartTime, "Generate PDF");
 
@@ -36,6 +40,7 @@ export class OrchestrationService {
     timeElapsedLogger(methodStartTime, "Doc Upload");
 
     // Save pdf location and needed info to DDB
+    await ApplicantUploadService.upload();
 
     // Event based?: Send email notifying managers of tenant about application
 
