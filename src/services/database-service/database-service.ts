@@ -3,6 +3,7 @@ import { DocumentClient } from "aws-sdk/clients/dynamodb";
 
 import { TABLE_NAME } from "../../config";
 import { ApplicationField } from "../../models/application-field";
+import { ApplicantSubmission } from "../../models/applicant-submission";
 import { databaseKeyParser } from "../../utils/database-key-parser";
 import { errorLogger } from "../../utils/error-logger";
 
@@ -40,7 +41,27 @@ export class DatabaseService {
 
       return applicationFields;
     } catch (error) {
-      errorLogger("Service:Database", error);
+      errorLogger("Service:Database:getApplicationFields", error);
+      throw new Error("Record not created");
+    }
+  }
+
+  async uploadApplicant(
+    applicantSubmission: ApplicantSubmission
+  ): Promise<void> {
+    const item = {
+      PartitionKey: `Application#${applicantSubmission.applicationId}`,
+      SortKey: `Applicant#${applicantSubmission.applicantId}`,
+      ...applicantSubmission
+    };
+    try {
+      const params = {
+        TableName: TABLE_NAME,
+        Item: item
+      };
+      await this.documentClient.put(params).promise();
+    } catch (error) {
+      errorLogger("Service:Database:uploadApplicant", error);
       throw new Error("Record not created");
     }
   }

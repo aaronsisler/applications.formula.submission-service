@@ -43,10 +43,9 @@ export class ApplicationMapperService {
       }));
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {
+      applicationId: applicationSubmission.applicationId,
       applicationMarkupFields
     };
-
-    console.log(applicationMarkupFields);
 
     return applicationMarkupMapper;
   }
