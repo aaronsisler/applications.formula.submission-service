@@ -1,4 +1,3 @@
-import { S3_RETRIEVAL_API_URL } from "../../config";
 import { DatabaseService } from "../database-service";
 import { ApplicantSubmission } from "../../models/applicant-submission";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
@@ -15,7 +14,6 @@ export class ApplicantUploadService {
       applicationId: applicationMarkupMapper.applicationId,
       applicantId: applicantId,
       applicantName: this.buildApplicantName(applicationMarkupMapper),
-      applicationUrl: `${S3_RETRIEVAL_API_URL}/${applicantId}`,
       dateSubmitted: timeStampBuilder()
     });
 

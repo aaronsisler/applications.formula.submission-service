@@ -8,13 +8,11 @@ describe("config", () => {
   });
 
   it("should export the correct keys", () => {
-    expect(configKeys).toContain("S3_RETRIEVAL_API_URL");
     expect(configKeys).toContain("S3_UPLOAD_BUCKET_NAME");
     expect(configKeys).toContain("TABLE_NAME");
   });
 
   it("should export the correct values", () => {
-    expect(config.S3_RETRIEVAL_API_URL).toBeDefined();
     expect(config.S3_UPLOAD_BUCKET_NAME).toBeDefined();
     expect(config.TABLE_NAME).toBeDefined();
   });
