@@ -2,7 +2,6 @@ import { DatabaseService } from "../database-service";
 import { ApplicantSubmission } from "../../models/applicant-submission";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
-import { InputFieldType } from "../../models/input-field-type";
 import { timeStampBuilder } from "../../utils/time-stamp-builder";
 
 export class ApplicantUploadService {
@@ -25,12 +24,12 @@ export class ApplicantUploadService {
   ): string {
     const lastName = this.extractApplicantFieldData(
       applicationMarkupMapper,
-      InputFieldType.NAME__LAST
+      "name,last"
     );
 
     const firstName = this.extractApplicantFieldData(
       applicationMarkupMapper,
-      InputFieldType.NAME__FIRST
+      "name,first"
     );
 
     return `${lastName}, ${firstName}`;
@@ -38,11 +37,11 @@ export class ApplicantUploadService {
 
   private static extractApplicantFieldData(
     applicationMarkupMapper: ApplicationMarkupMapper,
-    inputFieldType: InputFieldType
+    inputName: string
   ): string {
     return applicationMarkupMapper.applicationMarkupFields.find(
       (applicationMarkupField: ApplicationMarkupField) =>
-        applicationMarkupField.inputFieldType === inputFieldType
-    ).applicationMarkupFieldData;
+        applicationMarkupField.inputFieldName === inputName
+    ).inputFieldData;
   }
 }
