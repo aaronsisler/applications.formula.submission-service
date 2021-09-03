@@ -30,8 +30,8 @@ export class OrchestrationService {
     methodStartTime = Date.now();
     const applicantId = uuidGenerator();
     const { documentPath, fileName } = PdfGenerationService.generatePdf(
-      applicationMarkupMapper,
-      applicantId
+      applicantId,
+      applicationMarkupMapper
     );
     timeElapsedLogger(methodStartTime, "Generate PDF");
 

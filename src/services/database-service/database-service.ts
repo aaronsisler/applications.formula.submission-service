@@ -3,6 +3,7 @@ import { DocumentClient } from "aws-sdk/clients/dynamodb";
 
 import { TABLE_NAME } from "../../config";
 import { ApplicationField } from "../../models/application-field";
+import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicantSubmission } from "../../models/applicant-submission";
 import { databaseKeyParser } from "../../utils/database-key-parser";
 import { errorLogger } from "../../utils/error-logger";
@@ -42,6 +43,37 @@ export class DatabaseService {
       return applicationFields;
     } catch (error) {
       errorLogger("Service:Database:getApplicationFields", error);
+      throw new Error("Record not created");
+    }
+  }
+
+  async getApplicationFormGroups(
+    applicationId: string
+  ): Promise<ApplicationFormGroup[]> {
+    try {
+      var params = {
+        KeyConditionExpression:
+          "PartitionKey = :partitionKey AND begins_with ( SortKey , :sortKey )",
+        ExpressionAttributeValues: {
+          ":partitionKey": `Application#${applicationId}`,
+          ":sortKey": "ApplicationFormGroup"
+        },
+        TableName: TABLE_NAME
+      };
+      const { Items } = await this.documentClient.query(params).promise();
+
+      const applicationFormGroups: ApplicationFormGroup[] = Items.map(
+        (item: DocumentClient.AttributeMap) =>
+          new ApplicationFormGroup({
+            applicationId: databaseKeyParser(item.PartitionKey),
+            applicationFormGroupId: databaseKeyParser(item.SortKey),
+            ...item
+          })
+      );
+
+      return applicationFormGroups;
+    } catch (error) {
+      errorLogger("Service:Database:getApplicationFormGroups", error);
       throw new Error("Record not created");
     }
   }

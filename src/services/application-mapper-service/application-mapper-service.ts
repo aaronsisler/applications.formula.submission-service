@@ -1,5 +1,6 @@
 import { ApplicationField } from "../../models/application-field";
 import { ApplicationFieldData } from "../../models/application-field-data";
+import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
 import { ApplicationSubmission } from "../../models/application-submission";
@@ -15,8 +16,13 @@ export class ApplicationMapperService {
         applicationSubmission.applicationId
       );
 
+    const applicationFormGroups: ApplicationFormGroup[] =
+      await new DatabaseService().getApplicationFormGroups(
+        applicationSubmission.applicationId
+      );
+
     // Merge the two data sets together by their applicationFieldId
-    const map = new Map();
+    const map = new Map<string, ApplicationMarkupField>();
     applicationFields.forEach((applicationField: ApplicationField) =>
       map.set(applicationField.applicationFieldId, applicationField)
     );
@@ -32,18 +38,13 @@ export class ApplicationMapperService {
     // Create an array of correct attributes from the merged dataset objects
     const applicationMarkupFields: ApplicationMarkupField[] = Array.from(
       map.values()
-    )
-      .slice()
-      .sort(this.sortBySequence)
-      .map((item) => ({
-        applicationSequence: item.applicationSequence,
-        applicationMarkupFieldLabel: item.inputFieldLabel,
-        applicationMarkupFieldData: item.applicationFieldData,
-        inputFieldType: item.inputFieldType
-      }));
+    );
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {
       applicationId: applicationSubmission.applicationId,
+      applicationFormGroups: Array.from(applicationFormGroups)
+        .slice()
+        .sort(this.sortBySequence),
       applicationMarkupFields
     };
 
@@ -51,11 +52,11 @@ export class ApplicationMapperService {
   }
 
   private static sortBySequence(
-    applicationFieldOne: ApplicationField,
-    applicationFieldTwo: ApplicationField
+    applicationFormGroupOne: ApplicationFormGroup,
+    applicationFormGroupTwo: ApplicationFormGroup
   ): number {
-    return applicationFieldOne.applicationSequence >
-      applicationFieldTwo.applicationSequence
+    return applicationFormGroupOne.applicationFormGroupSequence >
+      applicationFormGroupTwo.applicationFormGroupSequence
       ? 1
       : 0;
   }

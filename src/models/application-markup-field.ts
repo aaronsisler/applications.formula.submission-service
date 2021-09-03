@@ -1,8 +1,5 @@
-import { InputFieldType } from "./input-field-type";
+import { ApplicationField } from "./application-field";
 
-export interface ApplicationMarkupField {
-  applicationSequence: number;
-  applicationMarkupFieldLabel: string;
-  applicationMarkupFieldData: any;
-  inputFieldType: InputFieldType;
+export interface ApplicationMarkupField extends ApplicationField {
+  inputFieldData?: any;
 }

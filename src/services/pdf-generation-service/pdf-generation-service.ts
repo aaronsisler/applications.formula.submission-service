@@ -1,13 +1,15 @@
 import PDFDocument from "pdfkit";
 import fs from "fs";
 
-import { ApplicationMarkupField } from "../../models/application-markup-field";
+import { NameDisplayGroup } from "../../components/name-display-group/name-display-group";
+import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
+import { FormGroupType } from "../../models/form-group-type";
 
 export class PdfGenerationService {
   static generatePdf(
-    applicationMarkupMapper: ApplicationMarkupMapper,
-    rawFileName: string
+    rawFileName: string,
+    applicationMarkupMapper: ApplicationMarkupMapper
   ): any {
     const fileName = `${rawFileName}.pdf`;
     const documentPath = `/tmp/${fileName}`;
@@ -16,21 +18,18 @@ export class PdfGenerationService {
     pdfDocument.pipe(fs.createWriteStream(documentPath));
     pdfDocument.text("My Sample PDF Document");
     pdfDocument.moveDown().moveDown();
-    applicationMarkupMapper.applicationMarkupFields.forEach(
-      (applicationMarkupField: ApplicationMarkupField) => {
-        const { applicationMarkupFieldData, applicationMarkupFieldLabel } =
-          applicationMarkupField;
-        pdfDocument
-          .text(applicationMarkupFieldLabel, { continued: true })
-          .text(": ", { continued: true })
-          .text(applicationMarkupFieldData || "");
-        applicationMarkupFieldData
-          ? pdfDocument.moveDown()
-          : pdfDocument.moveDown().moveDown();
+    applicationMarkupMapper.applicationFormGroups.forEach(
+      (applicationFormGroup: ApplicationFormGroup) => {
+        switch (applicationFormGroup.formGroupType) {
+          case FormGroupType.NAME:
+            NameDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationMarkupFields
+            );
+        }
       }
     );
 
-    pdfDocument.text("Is this after?");
     pdfDocument.end();
 
     return { documentPath, fileName };
