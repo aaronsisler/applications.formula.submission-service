@@ -9,6 +9,8 @@ export const NameDisplayGroup = (
   pdfDocument.text("Name Information");
   pdfDocument.moveDown().moveDown();
   const mappedFields = nameMapper(applicationMarkupFields);
+  console.info("mappedFields");
+  console.info(mappedFields);
   let currentField: ApplicationMarkupField;
 
   if (mappedFields.has("name,last")) {

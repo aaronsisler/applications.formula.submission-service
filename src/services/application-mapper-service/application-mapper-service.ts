@@ -26,24 +26,29 @@ export class ApplicationMapperService {
     console.info(applicationFormGroups);
 
     // Merge the two data sets together by their applicationFieldId
-    const map = new Map<string, ApplicationMarkupField>();
+    const applicationFieldMap = new Map<string, ApplicationField>();
     applicationFields.forEach((applicationField: ApplicationField) =>
-      map.set(applicationField.applicationFieldId, applicationField)
+      applicationFieldMap.set(
+        applicationField.applicationFieldId,
+        applicationField
+      )
     );
+
+    const applicationMarkupFieldMap = new Map<string, ApplicationMarkupField>();
 
     applicationSubmission.applicationFieldData.forEach(
       (applicationFieldData: ApplicationFieldData) =>
-        map.set(applicationFieldData.applicationFieldId, {
-          ...map.get(applicationFieldData.applicationFieldId),
-          ...applicationFieldData
+        applicationMarkupFieldMap.set(applicationFieldData.applicationFieldId, {
+          ...applicationFieldMap.get(applicationFieldData.applicationFieldId),
+          inputFieldData: applicationFieldData.applicationFieldData
         })
     );
-    console.info("map");
-    console.info(map);
+    console.info("applicationMarkupFieldMap");
+    console.info(applicationMarkupFieldMap);
 
     // Create an array of correct attributes from the merged dataset objects
     const applicationMarkupFields: ApplicationMarkupField[] = Array.from(
-      map.values()
+      applicationMarkupFieldMap.values()
     );
     console.info("applicationMarkupFields");
     console.info(applicationMarkupFields);
