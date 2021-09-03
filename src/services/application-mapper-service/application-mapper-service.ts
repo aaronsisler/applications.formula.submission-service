@@ -15,11 +15,15 @@ export class ApplicationMapperService {
       await new DatabaseService().getApplicationFields(
         applicationSubmission.applicationId
       );
+    console.info("applicationFields");
+    console.info(applicationFields);
 
     const applicationFormGroups: ApplicationFormGroup[] =
       await new DatabaseService().getApplicationFormGroups(
         applicationSubmission.applicationId
       );
+    console.info("applicationFormGroups");
+    console.info(applicationFormGroups);
 
     // Merge the two data sets together by their applicationFieldId
     const map = new Map<string, ApplicationMarkupField>();
@@ -34,11 +38,15 @@ export class ApplicationMapperService {
           ...applicationFieldData
         })
     );
+    console.info("map");
+    console.info(map);
 
     // Create an array of correct attributes from the merged dataset objects
     const applicationMarkupFields: ApplicationMarkupField[] = Array.from(
       map.values()
     );
+    console.info("applicationMarkupFields");
+    console.info(applicationMarkupFields);
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {
       applicationId: applicationSubmission.applicationId,
@@ -47,6 +55,9 @@ export class ApplicationMapperService {
         .sort(this.sortBySequence),
       applicationMarkupFields
     };
+
+    console.info("applicationMarkupMapper");
+    console.info(applicationMarkupMapper);
 
     return applicationMarkupMapper;
   }

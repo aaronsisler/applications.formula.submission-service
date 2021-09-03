@@ -20,6 +20,8 @@ export class PdfGenerationService {
     pdfDocument.moveDown().moveDown();
     applicationMarkupMapper.applicationFormGroups.forEach(
       (applicationFormGroup: ApplicationFormGroup) => {
+        console.log("applicationFormGroup");
+        console.log(applicationFormGroup);
         switch (applicationFormGroup.formGroupType) {
           case FormGroupType.NAME:
             NameDisplayGroup(

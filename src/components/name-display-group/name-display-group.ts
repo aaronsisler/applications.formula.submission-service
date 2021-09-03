@@ -11,8 +11,8 @@ export const NameDisplayGroup = (
   const mappedFields = nameMapper(applicationMarkupFields);
   let currentField: ApplicationMarkupField;
 
-  if (mappedFields.has("last,name")) {
-    currentField = mappedFields.get("last,name");
+  if (mappedFields.has("name,last")) {
+    currentField = mappedFields.get("name,last");
     pdfDocument
       .text(currentField.inputFieldLabel, { continued: true })
       .text(": ", { continued: true })
@@ -20,8 +20,8 @@ export const NameDisplayGroup = (
     pdfDocument.moveDown().moveDown();
   }
 
-  if (mappedFields.has("last,first")) {
-    currentField = mappedFields.get("last,name");
+  if (mappedFields.has("name,first")) {
+    currentField = mappedFields.get("name,first");
     pdfDocument
       .text(currentField.inputFieldLabel, { continued: true })
       .text(": ", { continued: true })
