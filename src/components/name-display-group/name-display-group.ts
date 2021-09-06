@@ -1,6 +1,7 @@
 import PDFDocument from "pdfkit";
 
 import { ApplicationMarkupField } from "../../models/application-markup-field";
+import { InputFieldName } from "../../models/input-field-name";
 
 export const NameDisplayGroup = (
   pdfDocument: typeof PDFDocument,
@@ -13,8 +14,8 @@ export const NameDisplayGroup = (
   console.info(mappedFields);
   let currentField: ApplicationMarkupField;
 
-  if (mappedFields.has("name,last")) {
-    currentField = mappedFields.get("name,last");
+  if (mappedFields.has(InputFieldName.NAME__LAST)) {
+    currentField = mappedFields.get(InputFieldName.NAME__LAST);
     pdfDocument
       .text(currentField.inputFieldLabel, { continued: true })
       .text(": ", { continued: true })
@@ -22,8 +23,8 @@ export const NameDisplayGroup = (
     pdfDocument.moveDown().moveDown();
   }
 
-  if (mappedFields.has("name,first")) {
-    currentField = mappedFields.get("name,first");
+  if (mappedFields.has(InputFieldName.NAME__FIRST)) {
+    currentField = mappedFields.get(InputFieldName.NAME__FIRST);
     pdfDocument
       .text(currentField.inputFieldLabel, { continued: true })
       .text(": ", { continued: true })
