@@ -10,7 +10,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "deploy:beta": "npm run build && sls deploy --config=./deployment/serverless.beta.yml",
-    "delete:beta": "sls remove --config=./deployment/serverless.beta.yml"
+    "delete:beta": "sls remove --config=./deployment/serverless.beta.yml",
+    "dev": "nodemon",
+    "start": "ts-node src/local/index.ts"
   },
   "dependencies": {
     "aws-sdk": "^2.952.0",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.80",
+    "@types/express": "^4.17.13",
     "@types/jest": "^26.0.24",
     "@types/pdfkit": "^0.11.2",
     "@types/uuid": "^8.3.1",
@@ -29,10 +32,12 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "express": "^4.17.1",
     "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.4",
-    "ts-node": "^10.1.0",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   },
   "repository": {

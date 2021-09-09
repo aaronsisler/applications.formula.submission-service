@@ -10,9 +10,6 @@ export class MessageParserService {
     try {
       const applicationSubmission: ApplicationSubmission = JSON.parse(message);
 
-      console.log("applicationSubmission");
-      console.log(applicationSubmission);
-
       return applicationSubmission;
     } catch (error) {
       throw new Error("Message could not be parsed correctly");
