@@ -1,3 +1,4 @@
 export enum FormGroupType {
-  NAME = "NAME"
+  APPLICANT_ADDRESS = "ADDRESS",
+  APPLICANT_NAME = "NAME"
 }

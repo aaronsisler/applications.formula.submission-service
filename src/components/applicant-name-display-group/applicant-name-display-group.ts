@@ -5,13 +5,13 @@ import { InputFieldName } from "../../models/input-field-name";
 import { PdfStyles } from "../../models/pdf-styles";
 import { padRight } from "../../utils/pdf-utils";
 
-export const NameDisplayGroup = (
+export const ApplicantNameDisplayGroup = (
   pdfDocument: typeof PDFDocument,
   applicationMarkupFields: ApplicationMarkupField[]
 ): typeof PDFDocument => {
   // TODO Make this bold and import font types
   // http://pdfkit.org/docs/text.html
-  pdfDocument.text("Name Information");
+  pdfDocument.text("Applicant Name Information");
   pdfDocument.moveDown();
   const mappedFields = nameMapper(applicationMarkupFields);
   let currentField: ApplicationMarkupField;
@@ -35,7 +35,6 @@ export const NameDisplayGroup = (
           underline: true
         }
       )
-
       .text(PdfStyles.SPACE_DOUBLE, { continued: true, underline: false });
   }
 

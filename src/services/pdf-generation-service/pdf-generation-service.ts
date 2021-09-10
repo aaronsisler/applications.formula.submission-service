@@ -1,7 +1,8 @@
 import PDFDocument from "pdfkit";
 import fs from "fs";
 
-import { NameDisplayGroup } from "../../components/name-display-group/name-display-group";
+import { ApplicantAddressDisplayGroup } from "../../components/applicant-address-display-group";
+import { ApplicantNameDisplayGroup } from "../../components/applicant-name-display-group";
 import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
 import { FormGroupType } from "../../models/form-group-type";
@@ -18,8 +19,13 @@ export class PdfGenerationService {
     applicationMarkupMapper.applicationFormGroups.forEach(
       (applicationFormGroup: ApplicationFormGroup) => {
         switch (applicationFormGroup.formGroupType) {
-          case FormGroupType.NAME:
-            NameDisplayGroup(
+          case FormGroupType.APPLICANT_NAME:
+            return ApplicantNameDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationMarkupFields
+            );
+          case FormGroupType.APPLICANT_ADDRESS:
+            return ApplicantAddressDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationMarkupFields
             );
