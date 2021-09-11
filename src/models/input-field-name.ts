@@ -6,7 +6,9 @@ export enum InputFieldName {
   ADDRESS_POSTAL_CODE = "address,postalcode",
   ADDRESS_STATE = "address,state",
   ADDRESS_STREET = "address,street",
-  PHONE_NUMBER__AREA_CODE = "phonenumber,areacode",
-  PHONE_NUMBER__EXCHANGE = "phonenumber,exchange",
-  PHONE_NUMBER__LINE_NUMBER = "phonenumber,linenumber"
+  CONTACT_EMAIL = "contact,email",
+  CONTACT_PHONE_CELL = "contact,phone,cell",
+  CONTACT_PHONE_HOME = "contact,phone,home",
+  CONTACT_EMERGENCY_NAME = "contact,emergency,name",
+  CONTACT_EMERGENCY_PHONE = "contact,emergency,phone"
 }

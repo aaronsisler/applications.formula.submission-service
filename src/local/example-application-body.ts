@@ -24,6 +24,26 @@ export const exampleApplicationBody = {
     {
       applicationFieldId: "address,postalcode",
       applicationFieldData: "27540"
+    },
+    {
+      applicationFieldId: "contact,phone,cell",
+      applicationFieldData: "(910) 603-0899"
+    },
+    {
+      applicationFieldId: "contact,phone,home",
+      applicationFieldData: "(910) 245-8445"
+    },
+    {
+      applicationFieldId: "contact,email",
+      applicationFieldData: "aaron.sisler@gmail.com"
+    },
+    {
+      applicationFieldId: "contact,emergency,name",
+      applicationFieldData: "Bridget Sisler"
+    },
+    {
+      applicationFieldId: "contact,emergency,phone",
+      applicationFieldData: "(919) 820-2553"
     }
   ]
 };
