@@ -10,5 +10,9 @@ export enum InputFieldName {
   CONTACT_PHONE_CELL = "contact,phone,cell",
   CONTACT_PHONE_HOME = "contact,phone,home",
   CONTACT_EMERGENCY_NAME = "contact,emergency,name",
-  CONTACT_EMERGENCY_PHONE = "contact,emergency,phone"
+  CONTACT_EMERGENCY_PHONE = "contact,emergency,phone",
+  MEDICAL_CONDITIONS = "medical,conditions",
+  MEDICAL_MEDICATIONS = "medical,medications",
+  MEDICAL_SMOKE = "medical,smoke",
+  MEDICAL_ALCOHOL = "medical,alcohol"
 }

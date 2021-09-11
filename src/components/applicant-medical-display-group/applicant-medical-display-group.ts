@@ -5,13 +5,13 @@ import { InputFieldName } from "../../models/input-field-name";
 import { PdfCharacters } from "../../models/pdf-characters";
 import { buildHeader, padRight } from "../../utils/pdf-utils";
 
-export const ApplicantNameDisplayGroup = (
+export const ApplicantMedicalDisplayGroup = (
   pdfDocument: typeof PDFDocument,
   applicationInputFields: Map<string, any>
 ): typeof PDFDocument => {
   // TODO Make this bold and import font types
   // http://pdfkit.org/docs/text.html
-  pdfDocument = buildHeader(pdfDocument, "Applicant Name Information");
+  pdfDocument = buildHeader(pdfDocument, "Applicant Medical Information");
   pdfDocument.moveDown(0.75);
   let currentField: ApplicationMarkupField;
 

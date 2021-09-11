@@ -3,6 +3,7 @@ import fs from "fs";
 
 import { ApplicantAddressDisplayGroup } from "../../components/applicant-address-display-group";
 import { ApplicantContactDisplayGroup } from "../../components/applicant-contact-display-group";
+import { ApplicantMedicalDisplayGroup } from "../../components/applicant-medical-display-group";
 import { ApplicantNameDisplayGroup } from "../../components/applicant-name-display-group";
 import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
@@ -24,17 +25,22 @@ export class PdfGenerationService {
           case FormGroupType.APPLICANT_NAME:
             return ApplicantNameDisplayGroup(
               pdfDocument,
-              applicationMarkupMapper.applicationMarkupFields
+              applicationMarkupMapper.applicationInputFields
             );
           case FormGroupType.APPLICANT_ADDRESS:
             return ApplicantAddressDisplayGroup(
               pdfDocument,
-              applicationMarkupMapper.applicationMarkupFields
+              applicationMarkupMapper.applicationInputFields
             );
           case FormGroupType.APPLICANT_CONTACT:
             return ApplicantContactDisplayGroup(
               pdfDocument,
-              applicationMarkupMapper.applicationMarkupFields
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_MEDICAL:
+            return ApplicantMedicalDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
             );
         }
       }

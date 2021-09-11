@@ -50,10 +50,22 @@ export class ApplicationMapperService {
       applicationFormGroups: Array.from(applicationFormGroups)
         .slice()
         .sort(this.sortBySequence),
+      applicationInputFields: this.createInputNamesMap(applicationMarkupFields),
       applicationMarkupFields
     };
 
     return applicationMarkupMapper;
+  }
+
+  private static createInputNamesMap(
+    applicationMarkupFields: ApplicationMarkupField[]
+  ): Map<string, any> {
+    const map = new Map();
+    applicationMarkupFields.forEach(
+      (applicationMarkupField: ApplicationMarkupField) =>
+        map.set(applicationMarkupField.inputFieldName, applicationMarkupField)
+    );
+    return map;
   }
 
   private static sortBySequence(
