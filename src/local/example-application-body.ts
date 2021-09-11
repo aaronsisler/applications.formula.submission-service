@@ -44,6 +44,22 @@ export const exampleApplicationBody = {
     {
       applicationFieldId: "contact,emergency,phone",
       applicationFieldData: "(919) 820-2553"
+    },
+    {
+      applicationFieldId: "medical,conditions",
+      applicationFieldData: "None"
+    },
+    {
+      applicationFieldId: "medical,medications",
+      applicationFieldData: "Zoloft"
+    },
+    {
+      applicationFieldId: "medical,smoke",
+      applicationFieldData: "1"
+    },
+    {
+      applicationFieldId: "medical,alcohol",
+      applicationFieldData: "3"
     }
   ]
 };

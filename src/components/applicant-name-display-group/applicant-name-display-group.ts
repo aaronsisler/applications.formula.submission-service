@@ -3,6 +3,7 @@ import PDFDocument from "pdfkit";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { InputFieldName } from "../../models/input-field-name";
 import { PdfCharacters } from "../../models/pdf-characters";
+import { PdfStyles } from "../../models/pdf-styles";
 import { buildHeader, padRight } from "../../utils/pdf-utils";
 
 export const ApplicantNameDisplayGroup = (
@@ -18,40 +19,22 @@ export const ApplicantNameDisplayGroup = (
   currentField = applicationInputFields.get(InputFieldName.NAME__LAST);
   pdfDocument
     .text(currentField.inputFieldLabel, { continued: true })
-    .text(PdfCharacters.COLON, {
-      continued: true,
-      underline: false
-    })
-    .text(PdfCharacters.SPACE_DOUBLE, {
-      continued: true,
-      underline: true
-    })
+    .text(PdfCharacters.COLON, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
       padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 45),
-      {
-        continued: true,
-        underline: true
-      }
+      PdfStyles.CONTINUED_UNDERLINED
     )
-    .text(PdfCharacters.SPACE_DOUBLE, { continued: true, underline: false });
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_NOT_UNDERLINED);
 
   currentField = applicationInputFields.get(InputFieldName.NAME__FIRST);
   pdfDocument
-    .text(currentField.inputFieldLabel, { continued: true, underline: false })
-    .text(PdfCharacters.COLON, {
-      continued: true,
-      underline: false
-    })
-    .text(PdfCharacters.SPACE_DOUBLE, {
-      continued: true,
-      underline: true
-    })
+    .text(currentField.inputFieldLabel, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.COLON, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
       padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 45),
-      {
-        continued: true,
-        underline: true
-      }
+      PdfStyles.CONTINUED_UNDERLINED
     )
     .text(PdfCharacters.EMPTY_STRING, {
       underline: true

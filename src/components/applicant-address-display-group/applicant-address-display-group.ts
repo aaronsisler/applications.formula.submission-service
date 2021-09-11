@@ -3,6 +3,7 @@ import PDFDocument from "pdfkit";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { InputFieldName } from "../../models/input-field-name";
 import { PdfCharacters } from "../../models/pdf-characters";
+import { PdfStyles } from "../../models/pdf-styles";
 import { buildHeader, padRight } from "../../utils/pdf-utils";
 
 export const ApplicantAddressDisplayGroup = (
@@ -18,20 +19,11 @@ export const ApplicantAddressDisplayGroup = (
   currentField = applicationInputFields.get(InputFieldName.ADDRESS_STREET);
   pdfDocument
     .text(currentField.inputFieldLabel, { continued: true })
-    .text(PdfCharacters.COLON, {
-      continued: true,
-      underline: false
-    })
-    .text(PdfCharacters.SPACE_DOUBLE, {
-      continued: true,
-      underline: true
-    })
+    .text(PdfCharacters.COLON, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
       padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 85),
-      {
-        continued: true,
-        underline: true
-      }
+      PdfStyles.CONTINUED_UNDERLINED
     )
     .text(PdfCharacters.EMPTY_STRING, { underline: true });
 
@@ -40,64 +32,37 @@ export const ApplicantAddressDisplayGroup = (
 
   currentField = applicationInputFields.get(InputFieldName.ADDRESS_CITY);
   pdfDocument
-    .text(currentField.inputFieldLabel, { continued: true, underline: false })
-    .text(PdfCharacters.COLON, {
-      continued: true,
-      underline: false
-    })
-    .text(PdfCharacters.SPACE_DOUBLE, {
-      continued: true,
-      underline: true
-    })
+    .text(currentField.inputFieldLabel, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.COLON, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
       padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 65),
-      {
-        continued: true,
-        underline: true
-      }
+      PdfStyles.CONTINUED_UNDERLINED
     )
-    .text(PdfCharacters.SPACE_DOUBLE, { continued: true, underline: false });
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_NOT_UNDERLINED);
 
   currentField = applicationInputFields.get(InputFieldName.ADDRESS_STATE);
   pdfDocument
-    .text(currentField.inputFieldLabel, { continued: true, underline: false })
-    .text(PdfCharacters.COLON, {
-      continued: true,
-      underline: false
-    })
-    .text(PdfCharacters.SPACE_DOUBLE, {
-      continued: true,
-      underline: true
-    })
+    .text(currentField.inputFieldLabel, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.COLON, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
       padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 2),
-      {
-        continued: true,
-        underline: true
-      }
+      PdfStyles.CONTINUED_UNDERLINED
     )
-    .text(PdfCharacters.SPACE_DOUBLE, { continued: true, underline: true })
-    .text(PdfCharacters.SPACE_DOUBLE, { continued: true, underline: false });
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_NOT_UNDERLINED);
 
   currentField = applicationInputFields.get(InputFieldName.ADDRESS_POSTAL_CODE);
   pdfDocument
-    .text(currentField.inputFieldLabel, { continued: true, underline: false })
-    .text(PdfCharacters.COLON, {
-      continued: true,
-      underline: false
-    })
-    .text(PdfCharacters.SPACE_DOUBLE, {
-      continued: true,
-      underline: true
-    })
+    .text(currentField.inputFieldLabel, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.COLON, PdfStyles.CONTINUED_NOT_UNDERLINED)
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
       padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 5),
-      {
-        continued: true,
-        underline: true
-      }
+      PdfStyles.CONTINUED_UNDERLINED
     )
-    .text(PdfCharacters.SPACE_DOUBLE, { continued: true, underline: true })
+    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(PdfCharacters.EMPTY_STRING, { underline: false });
 
   pdfDocument.moveDown(1.5);

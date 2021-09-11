@@ -1,4 +1,11 @@
-export enum PdfStyles {
-  FONT_SIZE_HEADING = 14,
-  FONT_SIZE_DEFAULT = 12
+export class PdfStyles {
+  public static CONTINUED_UNDERLINED = {
+    continued: true,
+    underline: true
+  };
+
+  public static CONTINUED_NOT_UNDERLINED = {
+    continued: true,
+    underline: false
+  };
 }
