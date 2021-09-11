@@ -1,7 +1,4 @@
 export enum PdfStyles {
-  SPACE_SINGLE = " ",
-  SPACE_DOUBLE = "  ",
-  COLON = ":",
-  COLON_TRAILING_SPACE = ": ",
-  EMPTY_STRING = ""
+  FONT_SIZE_HEADING = 14,
+  FONT_SIZE_DEFAULT = 12
 }

@@ -1,1 +1,1 @@
-export { padRight } from "./pdf-utils";
+export { buildHeader, padRight } from "./pdf-utils";
