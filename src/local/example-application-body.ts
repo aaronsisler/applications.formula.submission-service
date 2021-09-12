@@ -60,6 +60,26 @@ export const exampleApplicationBody = {
     {
       applicationFieldId: "medical,alcohol",
       applicationFieldData: "3"
+    },
+    {
+      applicationFieldId: "residency,nc,resident",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "residency,nc,outside",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "residency,nc,outside,yes",
+      applicationFieldData: "I was in SC for a month."
+    },
+    {
+      applicationFieldId: "crime,convicted",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "crime,convicted,yes",
+      applicationFieldData: "I was in a fight back in the day."
     }
   ]
 };

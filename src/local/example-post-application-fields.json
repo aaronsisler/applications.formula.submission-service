@@ -1,0 +1,122 @@
+[
+  {
+    "applicationId": "123",
+    "applicationFieldId": "name,last",
+    "inputFieldLabel": "Last Name",
+    "inputFieldName": "name,last"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "name,first",
+    "inputFieldLabel": "First Name",
+    "inputFieldName": "name,first"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "address,street",
+    "inputFieldLabel": "Street Address",
+    "inputFieldName": "address,street"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "address,city",
+    "inputFieldLabel": "City",
+    "inputFieldName": "address,city"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "address,state",
+    "inputFieldLabel": "State",
+    "inputFieldName": "address,state"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "address,postalcode",
+    "inputFieldLabel": "Postal Code",
+    "inputFieldName": "address,postalcode"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "contact,phone,cell",
+    "inputFieldLabel": "Cell Phone",
+    "inputFieldName": "contact,phone,cell"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "contact,phone,home",
+    "inputFieldLabel": "Home Phone",
+    "inputFieldName": "contact,phone,home"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "contact,email",
+    "inputFieldLabel": "Email",
+    "inputFieldName": "contact,email"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "contact,emergency,name",
+    "inputFieldLabel": "Name",
+    "inputFieldName": "contact,emergency,name"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "contact,emergency,phone",
+    "inputFieldLabel": "Phone",
+    "inputFieldName": "contact,emergency,phone"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "medical,conditions",
+    "inputFieldLabel": "List any medical conditions you may have that could interfere with your work performance or required duties.",
+    "inputFieldName": "medical,conditions"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "medical,medications",
+    "inputFieldLabel": "Please list any medications you are currently taking and the prescribing physician.",
+    "inputFieldName": "medical,medications"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "medical,smoke",
+    "inputFieldLabel": "How often do you smoke?",
+    "inputFieldName": "medical,smoke"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "medical,alcohol",
+    "inputFieldLabel": "How often do you drink alcohol?",
+    "inputFieldName": "medical,alcohol"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "residency,nc,resident",
+    "inputFieldLabel": "Have you been a North Carolina resident for the last 5 years?",
+    "inputFieldName": "residency,nc,resident"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "residency,nc,outside",
+    "inputFieldLabel": "Have you lived outside of North Carolina anytime in the last 5 years?",
+    "inputFieldName": "residency,nc,outside"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "residency,nc,outside,yes",
+    "inputFieldLabel": "If yes to the previous question, please explain.",
+    "inputFieldName": "residency,nc,outside,yes"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "crime,convicted",
+    "inputFieldLabel": "Have you ever been convicted of a crime other than a minor traffic violation? This will be discovered upon background check so please be truthful.",
+    "inputFieldName": "crime,convicted"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "crime,convicted,yes",
+    "inputFieldLabel": "If yes to the previous question, please explain.",
+    "inputFieldName": "crime,convicted,yes"
+  }
+]

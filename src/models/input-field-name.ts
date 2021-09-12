@@ -14,5 +14,10 @@ export enum InputFieldName {
   MEDICAL_CONDITIONS = "medical,conditions",
   MEDICAL_MEDICATIONS = "medical,medications",
   MEDICAL_SMOKE = "medical,smoke",
-  MEDICAL_ALCOHOL = "medical,alcohol"
+  MEDICAL_ALCOHOL = "medical,alcohol",
+  RESIDENCY_NC_RESIDENT = "residency,nc,resident",
+  RESIDENCY_NC_OUTSIDE = "residency,nc,outside",
+  RESIDENCY_NC_OUTSIDE_YES = "residency,nc,outside,yes",
+  CRIME_CONVICTED = "crime,convicted",
+  CRIME_CONVICTED_YES = "crime,convicted,yes"
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_NAME",
+    "applicationFormGroupSequence": 1,
+    "formGroupType": "APPLICANT_NAME"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_ADDRESS",
+    "applicationFormGroupSequence": 2,
+    "formGroupType": "APPLICANT_ADDRESS"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_CONTACT",
+    "applicationFormGroupSequence": 3,
+    "formGroupType": "APPLICANT_CONTACT"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_MEDICAL",
+    "applicationFormGroupSequence": 4,
+    "formGroupType": "APPLICANT_MEDICAL"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_RESIDENCY",
+    "applicationFormGroupSequence": 5,
+    "formGroupType": "APPLICANT_RESIDENCY"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_CRIME",
+    "applicationFormGroupSequence": 6,
+    "formGroupType": "APPLICANT_CRIME"
+  }
+]

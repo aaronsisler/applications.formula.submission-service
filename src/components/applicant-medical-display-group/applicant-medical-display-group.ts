@@ -69,7 +69,7 @@ export const ApplicantMedicalDisplayGroup = (
     .text(padRight(convertedValue, 10), PdfStyles.CONTINUED_UNDERLINED)
     .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });
 
-  pdfDocument.moveDown(1.5);
+  pdfDocument.moveDown();
 
   return pdfDocument;
 };
