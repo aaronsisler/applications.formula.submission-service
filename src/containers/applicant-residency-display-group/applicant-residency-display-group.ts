@@ -1,6 +1,6 @@
 import PDFDocument from "pdfkit";
 
-import { SideBySideQuestionAndAnswer } from "../../components/side-by-side-question-and-answer";
+import { SideBySideLabelAndValue } from "../../components/side-by-side-label-and-value";
 import { TopQuestionBottomAnswer } from "../../components/top-question-bottom-answer";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { InputFieldName } from "../../models/input-field-name";
@@ -19,12 +19,12 @@ export const ApplicantResidencyDisplayGroup = (
   currentField = applicationInputFields.get(
     InputFieldName.RESIDENCY_NC_RESIDENT
   );
-  pdfDocument = SideBySideQuestionAndAnswer(pdfDocument, currentField);
+  pdfDocument = SideBySideLabelAndValue(pdfDocument, currentField);
 
   currentField = applicationInputFields.get(
     InputFieldName.RESIDENCY_NC_OUTSIDE
   );
-  pdfDocument = SideBySideQuestionAndAnswer(pdfDocument, currentField);
+  pdfDocument = SideBySideLabelAndValue(pdfDocument, currentField);
 
   currentField = applicationInputFields.get(
     InputFieldName.RESIDENCY_NC_OUTSIDE_YES

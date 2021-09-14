@@ -22,38 +22,34 @@ export class PdfGenerationService {
     pdfDocument.pipe(fs.createWriteStream(pdfDocumentMapper.documentPath));
     applicationMarkupMapper.applicationFormGroups.forEach(
       (applicationFormGroup: ApplicationFormGroup) => {
-        pdfDocument.moveDown();
+        pdfDocument.moveDown(0.5);
         switch (applicationFormGroup.formGroupType) {
-          // case FormGroupType.APPLICANT_NAME:
-          //   return ApplicantNameDisplayGroup(
-          //     pdfDocument,
-          //     applicationMarkupMapper.applicationInputFields
-          //   );
-          // case FormGroupType.APPLICANT_ADDRESS:
-          //   return ApplicantAddressDisplayGroup(
-          //     pdfDocument,
-          //     applicationMarkupMapper.applicationInputFields
-          //   );
-          // case FormGroupType.APPLICANT_CONTACT:
-          //   return ApplicantContactDisplayGroup(
-          //     pdfDocument,
-          //     applicationMarkupMapper.applicationInputFields
-          //   );
+          case FormGroupType.APPLICANT_NAME:
+            return ApplicantNameDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_ADDRESS:
+            return ApplicantAddressDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_CONTACT:
+            return ApplicantContactDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
           case FormGroupType.APPLICANT_MEDICAL:
-            pdfDocument.moveDown();
             return ApplicantMedicalDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationInputFields
             );
           case FormGroupType.APPLICANT_RESIDENCY:
-            // Leaving this "on" is causing double spacing for some reason
-            // pdfDocument.moveDown();
             return ApplicantResidencyDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationInputFields
             );
           case FormGroupType.APPLICANT_CRIME:
-            pdfDocument.moveDown();
             return ApplicantCrimeDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationInputFields

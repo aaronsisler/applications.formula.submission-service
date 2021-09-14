@@ -22,7 +22,7 @@ export const exampleApplicationBody = {
       applicationFieldData: "IL"
     },
     {
-      applicationFieldId: "address,postalcode",
+      applicationFieldId: "address,postal-code",
       applicationFieldData: "27540"
     },
     {

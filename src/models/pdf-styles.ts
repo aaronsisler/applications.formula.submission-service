@@ -8,4 +8,12 @@ export class PdfStyles {
     continued: true,
     underline: false
   };
+
+  public static CONTINUED = {
+    continued: true
+  };
+
+  public static UNDERLINED = {
+    underline: true
+  };
 }
