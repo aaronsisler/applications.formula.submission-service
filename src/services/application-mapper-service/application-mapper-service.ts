@@ -75,6 +75,6 @@ export class ApplicationMapperService {
     return applicationFormGroupOne.applicationFormGroupSequence >
       applicationFormGroupTwo.applicationFormGroupSequence
       ? 1
-      : 0;
+      : -1;
   }
 }

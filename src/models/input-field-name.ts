@@ -3,7 +3,7 @@ export enum InputFieldName {
   NAME__FIRST = "name,first",
   NAME__LAST = "name,last",
   ADDRESS_CITY = "address,city",
-  ADDRESS_POSTAL_CODE = "address,postalcode",
+  ADDRESS_POSTAL_CODE = "address,postal-code",
   ADDRESS_STATE = "address,state",
   ADDRESS_STREET = "address,street",
   CONTACT_EMAIL = "contact,email",
@@ -19,5 +19,11 @@ export enum InputFieldName {
   RESIDENCY_NC_OUTSIDE = "residency,nc,outside",
   RESIDENCY_NC_OUTSIDE_YES = "residency,nc,outside,yes",
   CRIME_CONVICTED = "crime,convicted",
-  CRIME_CONVICTED_YES = "crime,convicted,yes"
+  CRIME_CONVICTED_YES = "crime,convicted,yes",
+  TRANSPORTATION_DRIVERS_LICENSE_VALID = "transportation,drivers-license,valid",
+  TRANSPORTATION_DRIVERS_LICENSE_VALID_NO = "transportation,drivers-license,valid,no",
+  TRANSPORTATION_DRIVERS_LICENSE_NUMBER = "transportation,drivers-license,number",
+  TRANSPORTATION_DRIVERS_LICENSE_STATE = "transportation,drivers-license,state",
+  TRANSPORTATION_OWN_VEHICLE = "transportation,own-vehicle",
+  TRANSPORTATION_OWN_VEHICLE_NO = "transportation,own-vehicle,no"
 }

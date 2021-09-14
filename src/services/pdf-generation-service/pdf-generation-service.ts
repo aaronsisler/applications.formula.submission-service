@@ -1,12 +1,12 @@
 import PDFDocument from "pdfkit";
 import fs from "fs";
 
-import { ApplicantAddressDisplayGroup } from "../../components/applicant-address-display-group";
-import { ApplicantContactDisplayGroup } from "../../components/applicant-contact-display-group";
-import { ApplicantCrimeDisplayGroup } from "../../components/applicant-crime-display-group";
-import { ApplicantMedicalDisplayGroup } from "../../components/applicant-medical-display-group";
-import { ApplicantNameDisplayGroup } from "../../components/applicant-name-display-group";
-import { ApplicantResidencyDisplayGroup } from "../../components/applicant-residency-display-group";
+import { ApplicantAddressDisplayGroup } from "../../containers/applicant-address-display-group";
+import { ApplicantContactDisplayGroup } from "../../containers/applicant-contact-display-group";
+import { ApplicantCrimeDisplayGroup } from "../../containers/applicant-crime-display-group";
+import { ApplicantMedicalDisplayGroup } from "../../containers/applicant-medical-display-group";
+import { ApplicantNameDisplayGroup } from "../../containers/applicant-name-display-group";
+import { ApplicantResidencyDisplayGroup } from "../../containers/applicant-residency-display-group";
 import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
 import { FormGroupType } from "../../models/form-group-type";
@@ -23,8 +23,6 @@ export class PdfGenerationService {
     applicationMarkupMapper.applicationFormGroups.forEach(
       (applicationFormGroup: ApplicationFormGroup) => {
         pdfDocument.moveDown();
-        console.log(applicationFormGroup.formGroupType);
-        console.log(applicationFormGroup.applicationFormGroupSequence);
         switch (applicationFormGroup.formGroupType) {
           // case FormGroupType.APPLICANT_NAME:
           //   return ApplicantNameDisplayGroup(

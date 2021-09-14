@@ -31,9 +31,9 @@
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "address,postalcode",
+    "applicationFieldId": "address,postal-code",
     "inputFieldLabel": "Postal Code",
-    "inputFieldName": "address,postalcode"
+    "inputFieldName": "address,postal-code"
   },
   {
     "applicationId": "123",
@@ -118,5 +118,41 @@
     "applicationFieldId": "crime,convicted,yes",
     "inputFieldLabel": "If yes to the previous question, please explain.",
     "inputFieldName": "crime,convicted,yes"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "transportation,drivers-license,valid",
+    "inputFieldLabel": "Is your driver's license valid?",
+    "inputFieldName": "transportation,drivers-license,valid"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "transportation,drivers-license,valid,no",
+    "inputFieldLabel": "If no, please explain.",
+    "inputFieldName": "transportation,drivers-license,valid,no"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "transportation,drivers-license,number",
+    "inputFieldLabel": "Driver's License Number",
+    "inputFieldName": "transportation,drivers-license,number"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "transportation,drivers-license,state",
+    "inputFieldLabel": "Driver's License State of Issue",
+    "inputFieldName": "transportation,drivers-license,state"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "transportation,drivers-license,own-vehicle",
+    "inputFieldLabel": "Do you have YOUR OWN transportation to and from work?",
+    "inputFieldName": "transportation,drivers-license,own-vehicle"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "transportation,drivers-license,own-vehicle,no",
+    "inputFieldLabel": "What means of transportation would you use on a regular basis?",
+    "inputFieldName": "transportation,drivers-license,own-vehicle,no"
   }
 ]
