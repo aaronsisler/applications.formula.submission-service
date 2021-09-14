@@ -1,10 +1,10 @@
 import PDFDocument from "pdfkit";
 
+import { SideBySideQuestionAndAnswer } from "../../components/side-by-side-question-and-answer";
+import { TopQuestionBottomAnswer } from "../../components/top-question-bottom-answer";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { InputFieldName } from "../../models/input-field-name";
-import { PdfCharacters } from "../../models/pdf-characters";
-import { buildHeader, padRight } from "../../utils/pdf-utils";
-import { PdfStyles } from "../../models/pdf-styles";
+import { buildHeader } from "../../utils/pdf-utils";
 
 export const ApplicantResidencyDisplayGroup = (
   pdfDocument: typeof PDFDocument,
@@ -19,48 +19,17 @@ export const ApplicantResidencyDisplayGroup = (
   currentField = applicationInputFields.get(
     InputFieldName.RESIDENCY_NC_RESIDENT
   );
-  pdfDocument.text(currentField.inputFieldLabel, { continued: true });
-
-  pdfDocument
-    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
-    .text(
-      padRight(currentField.inputFieldData, 7),
-      PdfStyles.CONTINUED_UNDERLINED
-    )
-    .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });
-  pdfDocument.moveDown();
-  pdfDocument.moveDown(0.75);
+  pdfDocument = SideBySideQuestionAndAnswer(pdfDocument, currentField);
 
   currentField = applicationInputFields.get(
     InputFieldName.RESIDENCY_NC_OUTSIDE
   );
-  pdfDocument.text(currentField.inputFieldLabel, { continued: true });
-  pdfDocument
-    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
-    .text(
-      padRight(currentField.inputFieldData, 7),
-      PdfStyles.CONTINUED_UNDERLINED
-    )
-    .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });
-
-  pdfDocument.moveDown();
-  pdfDocument.moveDown(0.75);
+  pdfDocument = SideBySideQuestionAndAnswer(pdfDocument, currentField);
 
   currentField = applicationInputFields.get(
     InputFieldName.RESIDENCY_NC_OUTSIDE_YES
   );
-  pdfDocument.text(currentField.inputFieldLabel, { continued: false });
-
-  pdfDocument.moveDown(0.75);
-  pdfDocument
-    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
-    .text(
-      padRight(currentField.inputFieldData || PdfCharacters.EMPTY_STRING, 120),
-      PdfStyles.CONTINUED_UNDERLINED
-    )
-    .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });
-
-  pdfDocument.moveDown();
+  pdfDocument = TopQuestionBottomAnswer(pdfDocument, currentField);
 
   return pdfDocument;
 };

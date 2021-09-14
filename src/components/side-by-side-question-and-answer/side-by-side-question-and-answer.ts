@@ -5,22 +5,16 @@ import { PdfCharacters } from "../../models/pdf-characters";
 import { PdfStyles } from "../../models/pdf-styles";
 import { padRight } from "../../utils/pdf-utils";
 
-export const TopQuestionBottomAnswer = (
+export const SideBySideQuestionAndAnswer = (
   pdfDocument: typeof PDFDocument,
   applicationMarkupField: ApplicationMarkupField
 ): typeof PDFDocument => {
-  pdfDocument.text(applicationMarkupField.inputFieldLabel, {
-    continued: false
-  });
-  pdfDocument.moveDown(0.75);
+  pdfDocument.text(applicationMarkupField.inputFieldLabel, { continued: true });
 
   pdfDocument
     .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
     .text(
-      padRight(
-        applicationMarkupField.inputFieldData || PdfCharacters.EMPTY_STRING,
-        140
-      ),
+      padRight(applicationMarkupField.inputFieldData, 10),
       PdfStyles.CONTINUED_UNDERLINED
     )
     .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });

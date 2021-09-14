@@ -55,11 +55,11 @@ export const exampleApplicationBody = {
     },
     {
       applicationFieldId: "medical,smoke",
-      applicationFieldData: "1"
+      applicationFieldData: "Socially"
     },
     {
       applicationFieldId: "medical,alcohol",
-      applicationFieldData: "3"
+      applicationFieldData: "Weekly"
     },
     {
       applicationFieldId: "residency,nc,resident",

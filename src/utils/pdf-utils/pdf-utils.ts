@@ -21,6 +21,7 @@ export const buildHeader = (
     .fontSize(PdfFontSizes.FONT_SIZE_DEFAULT);
 };
 
+// TODO Send to UI?
 export const buildNumericConversion = (input: string): string => {
   switch (input) {
     case "4":
