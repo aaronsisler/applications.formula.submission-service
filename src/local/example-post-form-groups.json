@@ -34,5 +34,17 @@
     "applicationFormGroupId": "123-APPLICANT_CRIME",
     "applicationFormGroupSequence": 6,
     "formGroupType": "APPLICANT_CRIME"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_TRANSPORTATION",
+    "applicationFormGroupSequence": 7,
+    "formGroupType": "APPLICANT_TRANSPORTATION"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_AVAILABILITY",
+    "applicationFormGroupSequence": 8,
+    "formGroupType": "APPLICANT_AVAILABILITY"
   }
 ]

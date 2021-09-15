@@ -24,21 +24,21 @@ export class PdfGenerationService {
       (applicationFormGroup: ApplicationFormGroup) => {
         pdfDocument.moveDown(0.5);
         switch (applicationFormGroup.formGroupType) {
-          case FormGroupType.APPLICANT_NAME:
-            return ApplicantNameDisplayGroup(
-              pdfDocument,
-              applicationMarkupMapper.applicationInputFields
-            );
-          case FormGroupType.APPLICANT_ADDRESS:
-            return ApplicantAddressDisplayGroup(
-              pdfDocument,
-              applicationMarkupMapper.applicationInputFields
-            );
-          case FormGroupType.APPLICANT_CONTACT:
-            return ApplicantContactDisplayGroup(
-              pdfDocument,
-              applicationMarkupMapper.applicationInputFields
-            );
+          // case FormGroupType.APPLICANT_NAME:
+          //   return ApplicantNameDisplayGroup(
+          //     pdfDocument,
+          //     applicationMarkupMapper.applicationInputFields
+          //   );
+          // case FormGroupType.APPLICANT_ADDRESS:
+          //   return ApplicantAddressDisplayGroup(
+          //     pdfDocument,
+          //     applicationMarkupMapper.applicationInputFields
+          //   );
+          // case FormGroupType.APPLICANT_CONTACT:
+          //   return ApplicantContactDisplayGroup(
+          //     pdfDocument,
+          //     applicationMarkupMapper.applicationInputFields
+          //   );
           case FormGroupType.APPLICANT_MEDICAL:
             return ApplicantMedicalDisplayGroup(
               pdfDocument,

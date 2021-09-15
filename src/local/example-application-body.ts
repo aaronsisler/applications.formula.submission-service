@@ -80,6 +80,42 @@ export const exampleApplicationBody = {
     {
       applicationFieldId: "crime,convicted,yes",
       applicationFieldData: "I was in a fight back in the day."
+    },
+    {
+      applicationFieldId: "availability,schedule,days",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "availability,schedule,evenings",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "availability,schedule,nights",
+      applicationFieldData: "No"
+    },
+    {
+      applicationFieldId: "availability,schedule,weekends",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "availability,schedule,full-time",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "availability,schedule,part-time",
+      applicationFieldData: "No"
+    },
+    {
+      applicationFieldId: "availability,employed-elsewhere",
+      applicationFieldData: "Yes"
+    },
+    {
+      applicationFieldId: "availability,employed-elsewhere,yes",
+      applicationFieldData: "Taco Bell"
+    },
+    {
+      applicationFieldId: "availability,prevent-on-time",
+      applicationFieldData: "No"
     }
   ]
 };

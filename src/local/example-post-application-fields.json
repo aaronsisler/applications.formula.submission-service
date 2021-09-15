@@ -154,5 +154,41 @@
     "applicationFieldId": "transportation,drivers-license,own-vehicle,no",
     "inputFieldLabel": "What means of transportation would you use on a regular basis?",
     "inputFieldName": "transportation,drivers-license,own-vehicle,no"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,schedule,days",
+    "inputFieldLabel": "Days",
+    "inputFieldName": "availability,schedule,days"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,schedule,evenings",
+    "inputFieldLabel": "Evenings",
+    "inputFieldName": "availability,schedule,evenings"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,schedule,nights",
+    "inputFieldLabel": "Nights",
+    "inputFieldName": "availability,schedule,nights"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,schedule,weekends",
+    "inputFieldLabel": "Weekends",
+    "inputFieldName": "availability,schedule,weekends"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,schedule,full-time",
+    "inputFieldLabel": "Full-time",
+    "inputFieldName": "availability,schedule,full-time"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,schedule,part-time",
+    "inputFieldLabel": "Part-time",
+    "inputFieldName": "availability,schedule,part-time"
   }
 ]

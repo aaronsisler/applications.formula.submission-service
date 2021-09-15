@@ -25,5 +25,14 @@ export enum InputFieldName {
   TRANSPORTATION_DRIVERS_LICENSE_NUMBER = "transportation,drivers-license,number",
   TRANSPORTATION_DRIVERS_LICENSE_STATE = "transportation,drivers-license,state",
   TRANSPORTATION_OWN_VEHICLE = "transportation,own-vehicle",
-  TRANSPORTATION_OWN_VEHICLE_NO = "transportation,own-vehicle,no"
+  TRANSPORTATION_OWN_VEHICLE_NO = "transportation,own-vehicle,no",
+  AVAILABILITY_SCHEDULE_DAYS = "availability,schedule,days",
+  AVAILABILITY_SCHEDULE_EVENINGS = "availability,schedule,evenings",
+  AVAILABILITY_SCHEDULE_NIGHTS = "availability,schedule,nights",
+  AVAILABILITY_SCHEDULE_WEEKENDS = "availability,schedule,weekends",
+  AVAILABILITY_SCHEDULE_FULL_TIME = "availability,schedule,full-time",
+  AVAILABILITY_SCHEDULE_PART_TIME = "availability,schedule,part-time",
+  AVAILABILITY_EMPLOYED_ELSEWHERE = "availability,employed-elsewhere",
+  AVAILABILITY_EMPLOYED_ELSEWHERE_YES = "availability,employed-elsewhere,yes",
+  AVAILABILITY_PREVENT_ON_TIME = "availability,prevent-on-time"
 }
