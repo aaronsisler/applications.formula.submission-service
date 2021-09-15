@@ -82,6 +82,30 @@ export const exampleApplicationBody = {
       applicationFieldData: "I was in a fight back in the day."
     },
     {
+      applicationFieldId: "transportation,drivers-license,number",
+      applicationFieldData: "1234567"
+    },
+    {
+      applicationFieldId: "transportation,drivers-license,state",
+      applicationFieldData: "NC"
+    },
+    {
+      applicationFieldId: "transportation,drivers-license,valid",
+      applicationFieldData: "No"
+    },
+    {
+      applicationFieldId: "transportation,drivers-license,valid,no",
+      applicationFieldData: "It has lapsed"
+    },
+    {
+      applicationFieldId: "transportation,own-vehicle",
+      applicationFieldData: "No"
+    },
+    {
+      applicationFieldId: "transportation,own-vehicle,no",
+      applicationFieldData: "I use a friend's car"
+    },
+    {
       applicationFieldId: "availability,schedule,days",
       applicationFieldData: "Yes"
     },

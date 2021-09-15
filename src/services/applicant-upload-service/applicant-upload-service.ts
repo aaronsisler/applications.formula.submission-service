@@ -39,9 +39,7 @@ export class ApplicantUploadService {
     applicationMarkupMapper: ApplicationMarkupMapper,
     inputName: string
   ): string {
-    return applicationMarkupMapper.applicationMarkupFields.find(
-      (applicationMarkupField: ApplicationMarkupField) =>
-        applicationMarkupField.inputFieldName === inputName
-    ).inputFieldData;
+    return applicationMarkupMapper.applicationInputFields.get(inputName)
+      .inputFieldData;
   }
 }

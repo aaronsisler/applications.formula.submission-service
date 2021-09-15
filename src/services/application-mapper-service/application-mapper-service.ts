@@ -10,19 +10,21 @@ export class ApplicationMapperService {
   static async mapApplicationSubmission(
     applicationSubmission: ApplicationSubmission
   ): Promise<ApplicationMarkupMapper> {
-    // Retrieve the list of application fields from DDB using Application Id
-    const applicationFields: ApplicationField[] =
-      await new DatabaseService().getApplicationFields(
-        applicationSubmission.applicationId
-      );
-
     const applicationFormGroups: ApplicationFormGroup[] =
       await new DatabaseService().getApplicationFormGroups(
         applicationSubmission.applicationId
       );
 
-    // Merge the two data sets together by their applicationFieldId
+    // Retrieve the list of application fields from DB using Application Id
+    const applicationFields: ApplicationField[] =
+      await new DatabaseService().getApplicationFields(
+        applicationSubmission.applicationId
+      );
+
     const applicationFieldMap = new Map<string, ApplicationField>();
+    const applicationMarkupFieldMap = new Map<string, ApplicationMarkupField>();
+
+    // Convert the list of application fields to a map
     applicationFields.forEach((applicationField: ApplicationField) =>
       applicationFieldMap.set(
         applicationField.applicationFieldId,
@@ -30,8 +32,7 @@ export class ApplicationMapperService {
       )
     );
 
-    const applicationMarkupFieldMap = new Map<string, ApplicationMarkupField>();
-
+    // Merge the two data sets together by their applicationFieldId
     applicationSubmission.applicationFieldData.forEach(
       (applicationFieldData: ApplicationFieldData) =>
         applicationMarkupFieldMap.set(applicationFieldData.applicationFieldId, {
@@ -40,32 +41,28 @@ export class ApplicationMapperService {
         })
     );
 
-    // Create an array of correct attributes from the merged dataset objects
-    const applicationMarkupFields: ApplicationMarkupField[] = Array.from(
-      applicationMarkupFieldMap.values()
-    );
+    // For Debugging
+    if (applicationFieldMap.size != applicationMarkupFieldMap.size) {
+      const thing = [];
+      for (const key of applicationFieldMap.keys()) {
+        if (!applicationMarkupFieldMap.has(key)) {
+          thing.push(key);
+        }
+      }
+      console.log(thing);
+    }
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {
       applicationId: applicationSubmission.applicationId,
       applicationFormGroups: Array.from(applicationFormGroups)
         .slice()
         .sort(this.sortBySequence),
-      applicationInputFields: this.createInputNamesMap(applicationMarkupFields),
-      applicationMarkupFields
+      applicationInputFields: applicationMarkupFieldMap
     };
 
-    return applicationMarkupMapper;
-  }
+    console.log("here");
 
-  private static createInputNamesMap(
-    applicationMarkupFields: ApplicationMarkupField[]
-  ): Map<string, any> {
-    const map = new Map();
-    applicationMarkupFields.forEach(
-      (applicationMarkupField: ApplicationMarkupField) =>
-        map.set(applicationMarkupField.inputFieldName, applicationMarkupField)
-    );
-    return map;
+    return applicationMarkupMapper;
   }
 
   private static sortBySequence(

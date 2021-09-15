@@ -128,7 +128,7 @@
   {
     "applicationId": "123",
     "applicationFieldId": "transportation,drivers-license,valid,no",
-    "inputFieldLabel": "If no, please explain.",
+    "inputFieldLabel": "If no, please explain",
     "inputFieldName": "transportation,drivers-license,valid,no"
   },
   {
@@ -145,15 +145,15 @@
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "transportation,drivers-license,own-vehicle",
+    "applicationFieldId": "transportation,own-vehicle",
     "inputFieldLabel": "Do you have YOUR OWN transportation to and from work?",
-    "inputFieldName": "transportation,drivers-license,own-vehicle"
+    "inputFieldName": "transportation,own-vehicle"
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "transportation,drivers-license,own-vehicle,no",
+    "applicationFieldId": "transportation,own-vehicle,no",
     "inputFieldLabel": "What means of transportation would you use on a regular basis?",
-    "inputFieldName": "transportation,drivers-license,own-vehicle,no"
+    "inputFieldName": "transportation,own-vehicle,no"
   },
   {
     "applicationId": "123",
