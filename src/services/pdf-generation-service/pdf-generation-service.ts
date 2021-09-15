@@ -2,6 +2,7 @@ import PDFDocument from "pdfkit";
 import fs from "fs";
 
 import { ApplicantAddressDisplayGroup } from "../../containers/applicant-address-display-group";
+import { ApplicantAvailabilityDisplayGroup } from "../../containers/applicant-availability-display-group";
 import { ApplicantContactDisplayGroup } from "../../containers/applicant-contact-display-group";
 import { ApplicantCrimeDisplayGroup } from "../../containers/applicant-crime-display-group";
 import { ApplicantMedicalDisplayGroup } from "../../containers/applicant-medical-display-group";
@@ -51,6 +52,11 @@ export class PdfGenerationService {
             );
           case FormGroupType.APPLICANT_CRIME:
             return ApplicantCrimeDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_AVAILABILITY:
+            return ApplicantAvailabilityDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationInputFields
             );

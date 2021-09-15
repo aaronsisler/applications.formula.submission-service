@@ -31,7 +31,7 @@ export const SideBySideLabelAndValue = (
       underline: false
     });
     pdfDocument.moveDown();
-    pdfDocument.moveDown(0.75);
+    pdfDocument.moveDown(0.5);
   }
 
   return pdfDocument;

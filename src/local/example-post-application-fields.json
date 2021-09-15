@@ -190,5 +190,23 @@
     "applicationFieldId": "availability,schedule,part-time",
     "inputFieldLabel": "Part-time",
     "inputFieldName": "availability,schedule,part-time"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,employed-elsewhere",
+    "inputFieldLabel": "If employed at WBEC, would you also be employed elsewhere?",
+    "inputFieldName": "availability,employed-elsewhere"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,employed-elsewhere,yes",
+    "inputFieldLabel": "If yes, where and what hours?",
+    "inputFieldName": "availability,employed-elsewhere,yes"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "availability,prevent-on-time",
+    "inputFieldLabel": "Other than occasional illness or emergencies, is there any personal or family issue or condition that would prevent you from being at work or getting to work as scheduled and on time? Please explain in detail.",
+    "inputFieldName": "availability,prevent-on-time"
   }
 ]
