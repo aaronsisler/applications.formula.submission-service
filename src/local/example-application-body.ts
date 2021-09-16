@@ -140,6 +140,65 @@ export const exampleApplicationBody = {
     {
       applicationFieldId: "availability,prevent-on-time",
       applicationFieldData: "No"
+    },
+    {
+      applicationFieldId: "education,last-grade-completed",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,high-school,diploma",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,high-school,location",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,ged",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,ged,location",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,college",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,college,location",
+      applicationFieldData: ""
+    },
+    ,
+    {
+      applicationFieldId: "education,college,degree",
+      applicationFieldData: ""
+    },
+    {
+      applicationFieldId: "education,college,graduation-date",
+      applicationFieldData: ""
+    },
+    {
+      applicationFieldId: "certification,select",
+      applicationFieldData: ""
+    },
+    {
+      applicationFieldId: "certification,other",
+      applicationFieldData: ""
+    },
+    {
+      applicationFieldId: "certification,current-not-expired",
+      applicationFieldData: ""
+    },
+    {
+      applicationFieldId: "certification,relevant-qualifications",
+      applicationFieldData: ""
     }
   ]
 };

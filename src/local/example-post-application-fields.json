@@ -208,5 +208,77 @@
     "applicationFieldId": "availability,prevent-on-time",
     "inputFieldLabel": "Other than occasional illness or emergencies, is there any personal or family issue or condition that would prevent you from being at work or getting to work as scheduled and on time? Please explain in detail.",
     "inputFieldName": "availability,prevent-on-time"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,last-grade-completed",
+    "inputFieldLabel": "Last grade completed",
+    "inputFieldName": "education,last-grade-completed"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,high-school,diploma",
+    "inputFieldLabel": "High School Diploma",
+    "inputFieldName": "education,high-school,diploma"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,high-school,location",
+    "inputFieldLabel": "Location",
+    "inputFieldName": "education,high-school,location"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,ged",
+    "inputFieldLabel": "GED",
+    "inputFieldName": "education,ged"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,ged,location",
+    "inputFieldLabel": "Location",
+    "inputFieldName": "education,ged,location"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,college,location",
+    "inputFieldLabel": "Location",
+    "inputFieldName": "education,college,location"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,college,degree",
+    "inputFieldLabel": "Degree Earned",
+    "inputFieldName": "education,college,degree"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "education,college,graduation-date",
+    "inputFieldLabel": "Graduation Date",
+    "inputFieldName": "education,college,graduation-date"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "certification,select",
+    "inputFieldLabel": "Professional licenses/certifications",
+    "inputFieldName": "certification,select"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "certification,other",
+    "inputFieldLabel": "Other",
+    "inputFieldName": "certification,other"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "certification,current-not-expired",
+    "inputFieldLabel": "Is certification current and not expired",
+    "inputFieldName": "certification,current-not-expired"
+  },
+  {
+    "applicationId": "123",
+    "applicationFieldId": "certification,relevant-qualifications",
+    "inputFieldLabel": "Other education/experience or qualifications related to the job for which you are applying",
+    "inputFieldName": "certification,relevant-qualifications"
   }
 ]

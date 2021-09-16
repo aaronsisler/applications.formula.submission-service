@@ -21,12 +21,11 @@ export class ApplicationMapperService {
         applicationSubmission.applicationId
       );
 
-    const applicationFieldMap = new Map<string, ApplicationField>();
     const applicationMarkupFieldMap = new Map<string, ApplicationMarkupField>();
 
     // Convert the list of application fields to a map
     applicationFields.forEach((applicationField: ApplicationField) =>
-      applicationFieldMap.set(
+      applicationMarkupFieldMap.set(
         applicationField.applicationFieldId,
         applicationField
       )
@@ -36,21 +35,23 @@ export class ApplicationMapperService {
     applicationSubmission.applicationFieldData.forEach(
       (applicationFieldData: ApplicationFieldData) =>
         applicationMarkupFieldMap.set(applicationFieldData.applicationFieldId, {
-          ...applicationFieldMap.get(applicationFieldData.applicationFieldId),
+          ...applicationMarkupFieldMap.get(
+            applicationFieldData.applicationFieldId
+          ),
           inputFieldData: applicationFieldData.applicationFieldData
         })
     );
 
     // For Debugging
-    if (applicationFieldMap.size != applicationMarkupFieldMap.size) {
-      const thing = [];
-      for (const key of applicationFieldMap.keys()) {
-        if (!applicationMarkupFieldMap.has(key)) {
-          thing.push(key);
-        }
+    const unusedFields = [];
+    for (const key of applicationMarkupFieldMap.keys()) {
+      if (applicationMarkupFieldMap.get(key).inputFieldData == undefined) {
+        unusedFields.push(key);
       }
-      console.log(thing);
     }
+
+    console.log("Logging any empty fields");
+    console.log(unusedFields);
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {
       applicationId: applicationSubmission.applicationId,

@@ -46,5 +46,17 @@
     "applicationFormGroupId": "123-APPLICANT_AVAILABILITY",
     "applicationFormGroupSequence": 8,
     "formGroupType": "APPLICANT_AVAILABILITY"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_EDUCATION",
+    "applicationFormGroupSequence": 9,
+    "formGroupType": "APPLICANT_EDUCATION"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_CERTIFICATIONS",
+    "applicationFormGroupSequence": 10,
+    "formGroupType": "APPLICANT_CERTIFICATIONS"
   }
 ]
