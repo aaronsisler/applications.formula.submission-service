@@ -61,8 +61,6 @@ export class ApplicationMapperService {
       applicationInputFields: applicationMarkupFieldMap
     };
 
-    console.log("here");
-
     return applicationMarkupMapper;
   }
 

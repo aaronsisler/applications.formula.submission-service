@@ -259,26 +259,26 @@
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "certification,select",
+    "applicationFieldId": "certifications,select",
     "inputFieldLabel": "Professional licenses/certifications",
-    "inputFieldName": "certification,select"
+    "inputFieldName": "certifications,select"
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "certification,other",
+    "applicationFieldId": "certifications,other",
     "inputFieldLabel": "Other",
-    "inputFieldName": "certification,other"
+    "inputFieldName": "certifications,other"
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "certification,current-not-expired",
-    "inputFieldLabel": "Is certification current and not expired",
-    "inputFieldName": "certification,current-not-expired"
+    "applicationFieldId": "certifications,current-not-expired",
+    "inputFieldLabel": "Are certifications current and not expired",
+    "inputFieldName": "certifications,current-not-expired"
   },
   {
     "applicationId": "123",
-    "applicationFieldId": "certification,relevant-qualifications",
+    "applicationFieldId": "certifications,relevant-qualifications",
     "inputFieldLabel": "Other education/experience or qualifications related to the job for which you are applying",
-    "inputFieldName": "certification,relevant-qualifications"
+    "inputFieldName": "certifications,relevant-qualifications"
   }
 ]

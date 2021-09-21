@@ -18,16 +18,7 @@ export const ApplicantCrimeDisplayGroup = (
   let currentField: ApplicationMarkupField;
 
   currentField = applicationInputFields.get(InputFieldName.CRIME_CONVICTED);
-  pdfDocument.text(currentField.inputFieldLabel, { continued: false });
-  pdfDocument.moveDown(0.75);
-
-  pdfDocument
-    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
-    .text(
-      padRight(currentField.inputFieldData, 7),
-      PdfStyles.CONTINUED_UNDERLINED
-    )
-    .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });
+  pdfDocument = TopQuestionBottomAnswer(pdfDocument, currentField);
 
   pdfDocument.moveDown();
   pdfDocument.moveDown(0.75);

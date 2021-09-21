@@ -2,8 +2,8 @@ import PDFDocument from "pdfkit";
 
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { PdfCharacters } from "../../models/pdf-characters";
+import { PdfDocumentConfig } from "../../models/pdf-document-config";
 import { PdfStyles } from "../../models/pdf-styles";
-import { padRight } from "../../utils/pdf-utils";
 
 export const TopQuestionBottomAnswer = (
   pdfDocument: typeof PDFDocument,
@@ -14,16 +14,28 @@ export const TopQuestionBottomAnswer = (
   });
   pdfDocument.moveDown(0.75);
 
+  pdfDocument.text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED);
+  pdfDocument.text(
+    applicationMarkupField.inputFieldData || PdfCharacters.EMPTY_STRING,
+    PdfStyles.CONTINUED
+  );
+
+  pdfDocument.text(PdfCharacters.EMPTY_STRING, {
+    continued: false,
+    underline: false
+  });
+
+  const height = pdfDocument.heightOfString("a");
+  const roundedHeightOffset = height - PdfDocumentConfig.LINE_POSITION_OFFSET;
+
   pdfDocument
-    .text(PdfCharacters.SPACE_DOUBLE, PdfStyles.CONTINUED_UNDERLINED)
-    .text(
-      padRight(
-        applicationMarkupField.inputFieldData || PdfCharacters.EMPTY_STRING,
-        140
-      ),
-      PdfStyles.CONTINUED_UNDERLINED
+    .lineWidth(PdfDocumentConfig.LINE_THICKNESS)
+    .moveTo(pdfDocument.x, pdfDocument.y + roundedHeightOffset)
+    .lineTo(
+      pdfDocument.page.width - PdfDocumentConfig.LINE_END_MARGIN,
+      pdfDocument.y + roundedHeightOffset
     )
-    .text(PdfCharacters.EMPTY_STRING, { continued: false, underline: false });
+    .stroke(PdfDocumentConfig.LINE_COLOR);
 
   pdfDocument.moveDown();
   pdfDocument.moveDown(0.75);

@@ -48,12 +48,13 @@ export enum InputFieldName {
   EDUCATION_HIGH_SCHOOL_LOCATION = "education,high-school,location",
   EDUCATION_GED = "education,ged",
   EDUCATION_GED_LOCATION = "education,ged,location",
+  EDUCATION_COLLEGE = "education,college",
   EDUCATION_COLLEGE_LOCATION = "education,college,location",
   EDUCATION_COLLEGE_DEGREE = "education,college,degree",
   EDUCATION_COLLEGE_GRADUATION_DATE = "education,college,graduation-date",
   // Certifications
-  CERTIFICATION_SELECT = "certification,select",
-  CERTIFICATION_OTHER = "certification,other",
-  CERTIFICATION_CURRENT_NOT_EXPIRED = "certification,current-not-expired",
-  CERTIFICATION_RELEVANT_QUALIFICATIONS = "certification,relevant-qualifications"
+  CERTIFICATIONS_SELECT = "certifications,select",
+  CERTIFICATIONS_OTHER = "certifications,other",
+  CERTIFICATIONS_CURRENT_NOT_EXPIRED = "certifications,current-not-expired",
+  CERTIFICATIONS_RELEVANT_QUALIFICATIONS = "certifications,relevant-qualifications"
 }

@@ -3,8 +3,10 @@ import fs from "fs";
 
 import { ApplicantAddressDisplayGroup } from "../../containers/applicant-address-display-group";
 import { ApplicantAvailabilityDisplayGroup } from "../../containers/applicant-availability-display-group";
+import { ApplicantCertificationsDisplayGroup } from "../../containers/applicant-certifications-display-group";
 import { ApplicantContactDisplayGroup } from "../../containers/applicant-contact-display-group";
 import { ApplicantCrimeDisplayGroup } from "../../containers/applicant-crime-display-group";
+import { ApplicantEducationDisplayGroup } from "../../containers/applicant-education-display-group";
 import { ApplicantMedicalDisplayGroup } from "../../containers/applicant-medical-display-group";
 import { ApplicantNameDisplayGroup } from "../../containers/applicant-name-display-group";
 import { ApplicantResidencyDisplayGroup } from "../../containers/applicant-residency-display-group";
@@ -12,6 +14,7 @@ import { ApplicantTransportationDisplayGroup } from "../../containers/applicant-
 import { ApplicationFormGroup } from "../../models/application-form-group";
 import { ApplicationMarkupMapper } from "../../models/application-markup-mapper";
 import { FormGroupType } from "../../models/form-group-type";
+import { PdfDocumentConfig } from "../../models/pdf-document-config";
 import { PdfDocumentMapper } from "../../models/pdf-document-mapper";
 
 export class PdfGenerationService {
@@ -19,7 +22,9 @@ export class PdfGenerationService {
     pdfDocumentMapper: PdfDocumentMapper,
     applicationMarkupMapper: ApplicationMarkupMapper
   ): void {
-    const pdfDocument = new PDFDocument({ margin: 35 });
+    const pdfDocument = new PDFDocument({
+      margin: PdfDocumentConfig.PAGE_MARGIN
+    });
 
     pdfDocument.pipe(fs.createWriteStream(pdfDocumentMapper.documentPath));
     applicationMarkupMapper.applicationFormGroups.forEach(
@@ -63,6 +68,16 @@ export class PdfGenerationService {
             );
           case FormGroupType.APPLICANT_AVAILABILITY:
             return ApplicantAvailabilityDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_EDUCATION:
+            return ApplicantEducationDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_CERTIFICATIONS:
+            return ApplicantCertificationsDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationInputFields
             );

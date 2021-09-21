@@ -143,62 +143,55 @@ export const exampleApplicationBody = {
     },
     {
       applicationFieldId: "education,last-grade-completed",
-      applicationFieldData: ""
+      applicationFieldData: "12"
     },
-    ,
     {
       applicationFieldId: "education,high-school,diploma",
-      applicationFieldData: ""
+      applicationFieldData: "Yes"
     },
-    ,
     {
       applicationFieldId: "education,high-school,location",
-      applicationFieldData: ""
+      applicationFieldData: "Union Pines"
     },
-    ,
     {
       applicationFieldId: "education,ged",
-      applicationFieldData: ""
+      applicationFieldData: "N/A"
     },
-    ,
     {
       applicationFieldId: "education,ged,location",
-      applicationFieldData: ""
+      applicationFieldData: "N/A"
     },
-    ,
     {
       applicationFieldId: "education,college",
-      applicationFieldData: ""
+      applicationFieldData: "Yes"
     },
-    ,
     {
       applicationFieldId: "education,college,location",
-      applicationFieldData: ""
+      applicationFieldData: "NC State, Raleigh, NC"
     },
-    ,
     {
       applicationFieldId: "education,college,degree",
-      applicationFieldData: ""
+      applicationFieldData: "B.S. in Math"
     },
     {
       applicationFieldId: "education,college,graduation-date",
-      applicationFieldData: ""
+      applicationFieldData: "05/2012"
     },
     {
-      applicationFieldId: "certification,select",
-      applicationFieldData: ""
+      applicationFieldId: "certifications,select",
+      applicationFieldData: "CNA, Med Tech"
     },
     {
-      applicationFieldId: "certification,other",
-      applicationFieldData: ""
+      applicationFieldId: "certifications,other",
+      applicationFieldData: "Random cert"
     },
     {
-      applicationFieldId: "certification,current-not-expired",
-      applicationFieldData: ""
+      applicationFieldId: "certifications,current-not-expired",
+      applicationFieldData: "Yes"
     },
     {
-      applicationFieldId: "certification,relevant-qualifications",
-      applicationFieldData: ""
+      applicationFieldId: "certifications,relevant-qualifications",
+      applicationFieldData: "I can play the flute with my eyes closed."
     }
   ]
 };
