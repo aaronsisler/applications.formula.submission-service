@@ -3,9 +3,7 @@ import PDFDocument from "pdfkit";
 import { TopQuestionBottomAnswer } from "../../components/top-question-bottom-answer";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { InputFieldName } from "../../models/input-field-name";
-import { PdfCharacters } from "../../models/pdf-characters";
-import { PdfStyles } from "../../models/pdf-styles";
-import { buildHeader, padRight } from "../../utils/pdf-utils";
+import { buildHeader } from "../../utils/pdf-utils";
 
 export const ApplicantCrimeDisplayGroup = (
   pdfDocument: typeof PDFDocument,
@@ -15,6 +13,7 @@ export const ApplicantCrimeDisplayGroup = (
   // http://pdfkit.org/docs/text.html
   pdfDocument = buildHeader(pdfDocument, "Applicant Crime Information");
   pdfDocument.moveDown(0.75);
+
   let currentField: ApplicationMarkupField;
 
   currentField = applicationInputFields.get(InputFieldName.CRIME_CONVICTED);
