@@ -58,5 +58,11 @@
     "applicationFormGroupId": "123-APPLICANT_CERTIFICATIONS",
     "applicationFormGroupSequence": 10,
     "formGroupType": "APPLICANT_CERTIFICATIONS"
+  },
+  {
+    "applicationId": "123",
+    "applicationFormGroupId": "123-APPLICANT_PREVIOUS_EMPLOYMENT",
+    "applicationFormGroupSequence": 11,
+    "formGroupType": "APPLICANT_PREVIOUS_EMPLOYMENT"
   }
 ]

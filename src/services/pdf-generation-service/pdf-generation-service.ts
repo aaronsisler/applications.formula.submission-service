@@ -9,6 +9,7 @@ import { ApplicantCrimeDisplayGroup } from "../../containers/applicant-crime-dis
 import { ApplicantEducationDisplayGroup } from "../../containers/applicant-education-display-group";
 import { ApplicantMedicalDisplayGroup } from "../../containers/applicant-medical-display-group";
 import { ApplicantNameDisplayGroup } from "../../containers/applicant-name-display-group";
+import { ApplicantPriorEmploymentDisplayGroup } from "../../containers/applicant-prior-employment-display-group";
 import { ApplicantResidencyDisplayGroup } from "../../containers/applicant-residency-display-group";
 import { ApplicantTransportationDisplayGroup } from "../../containers/applicant-transportation-display-group";
 import { ApplicationFormGroup } from "../../models/application-form-group";
@@ -78,6 +79,11 @@ export class PdfGenerationService {
             );
           case FormGroupType.APPLICANT_CERTIFICATIONS:
             return ApplicantCertificationsDisplayGroup(
+              pdfDocument,
+              applicationMarkupMapper.applicationInputFields
+            );
+          case FormGroupType.APPLICANT_PRIOR_EMPLOYMENT:
+            return ApplicantPriorEmploymentDisplayGroup(
               pdfDocument,
               applicationMarkupMapper.applicationInputFields
             );

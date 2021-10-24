@@ -54,7 +54,7 @@ export class OrchestrationService {
 
     // This block will not be used if this is locally called
     if (!isLocal) {
-      await OrchestrationService.pushToAws(
+      await OrchestrationService.pushToCloud(
         pdfDocumentMapper.documentPath,
         pdfDocumentMapper.fileName,
         pdfDocumentMapper.fileNameKey,
@@ -68,7 +68,7 @@ export class OrchestrationService {
     timeElapsedLogger(totalMethodStartTime, "Total Method");
   }
 
-  private static async pushToAws(
+  private static async pushToCloud(
     documentPath: string,
     fileName: string,
     applicantId: string,

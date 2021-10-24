@@ -1,16 +1,13 @@
 import PDFDocument from "pdfkit";
 
 import { SideBySideLabelAndValue } from "../../components/side-by-side-label-and-value";
-import { TopQuestionBottomAnswer } from "../../components/top-question-bottom-answer";
 import { ApplicationMarkupField } from "../../models/application-markup-field";
 import { InputFieldName } from "../../models/input-field-name";
-import { PdfCharacters } from "../../models/pdf-characters";
-import { PdfStyles } from "../../models/pdf-styles";
-import { buildHeader, padRight } from "../../utils/pdf-utils";
+import { buildHeader } from "../../utils/pdf-utils";
 
 export const ApplicantEducationDisplayGroup = (
   pdfDocument: typeof PDFDocument,
-  applicationInputFields: Map<string, any>
+  applicationInputFields: Map<string, ApplicationMarkupField>
 ): typeof PDFDocument => {
   // TODO Make this bold and import font types
   // http://pdfkit.org/docs/text.html

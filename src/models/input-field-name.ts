@@ -3,10 +3,10 @@ export enum InputFieldName {
   NAME__FIRST = "name,first",
   NAME__LAST = "name,last",
   // Address
-  ADDRESS_CITY = "address,city",
-  ADDRESS_POSTAL_CODE = "address,postal-code",
-  ADDRESS_STATE = "address,state",
   ADDRESS_STREET = "address,street",
+  ADDRESS_CITY = "address,city",
+  ADDRESS_STATE = "address,state",
+  ADDRESS_POSTAL_CODE = "address,postal-code",
   // Contact
   CONTACT_EMAIL = "contact,email",
   CONTACT_PHONE_CELL = "contact,phone,cell",
@@ -56,5 +56,12 @@ export enum InputFieldName {
   CERTIFICATIONS_SELECT = "certifications,select",
   CERTIFICATIONS_OTHER = "certifications,other",
   CERTIFICATIONS_CURRENT_NOT_EXPIRED = "certifications,current-not-expired",
-  CERTIFICATIONS_RELEVANT_QUALIFICATIONS = "certifications,relevant-qualifications"
+  CERTIFICATIONS_RELEVANT_QUALIFICATIONS = "certifications,relevant-qualifications",
+  // Prior Employment
+  PRIOR_EMPLOYMENT_PREFIX = "prior-employment,employer",
+  PRIOR_EMPLOYMENT_EMPLOYER_NAME = "prior-employment,employer,name",
+  PRIOR_EMPLOYMENT_EMPLOYER_ADDRESS = "prior-employment,employer,address",
+  PRIOR_EMPLOYMENT_EMPLOYER_CITY = "prior-employment,employer,city",
+  PRIOR_EMPLOYMENT_EMPLOYER_STATE = "prior-employment,employer,state",
+  PRIOR_EMPLOYMENT_EMPLOYER_POSTAL_CODE = "prior-employment,employer,postal-code"
 }

@@ -7,7 +7,7 @@ import { buildHeader } from "../../utils/pdf-utils";
 
 export const ApplicantContactDisplayGroup = (
   pdfDocument: typeof PDFDocument,
-  applicationInputFields: Map<string, any>
+  applicationInputFields: Map<string, ApplicationMarkupField>
 ): typeof PDFDocument => {
   // TODO Make this bold and import font types
   // http://pdfkit.org/docs/text.html

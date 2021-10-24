@@ -43,15 +43,27 @@ export class ApplicationMapperService {
     );
 
     // For Debugging
-    const unusedFields = [];
+    const unusedApplicationFields = [];
     for (const key of applicationMarkupFieldMap.keys()) {
       if (applicationMarkupFieldMap.get(key).inputFieldData == undefined) {
-        unusedFields.push(key);
+        unusedApplicationFields.push(key);
+        applicationMarkupFieldMap.delete(key);
       }
     }
 
-    console.log("Logging any empty fields");
-    console.log(unusedFields);
+    // For Debugging
+    const unusedSubmittedFields = [];
+    for (const key of applicationMarkupFieldMap.keys()) {
+      if (applicationMarkupFieldMap.get(key).applicationFieldId == undefined) {
+        unusedSubmittedFields.push(key);
+        applicationMarkupFieldMap.delete(key);
+      }
+    }
+
+    // console.log("Logging any empty application fields");
+    // console.log(unusedApplicationFields);
+    // console.log("Logging any empty submitted fields");
+    // console.log(unusedSubmittedFields);
 
     const applicationMarkupMapper: ApplicationMarkupMapper = {
       applicationId: applicationSubmission.applicationId,

@@ -192,6 +192,81 @@ export const exampleApplicationBody = {
     {
       applicationFieldId: "certifications,relevant-qualifications",
       applicationFieldData: "I can play the flute with my eyes closed."
+    },
+    {
+      applicationFieldId: "prior-employment,employer,name#1",
+      applicationFieldData: "Prior Employer Name #1",
+      applicationFieldSequence: 1
+    },
+    {
+      applicationFieldId: "prior-employment,employer,address#1",
+      applicationFieldData: "Prior Employer address #1",
+      applicationFieldSequence: 1
+    },
+    {
+      applicationFieldId: "prior-employment,employer,city#1",
+      applicationFieldData: "Holly Springs",
+      applicationFieldSequence: 1
+    },
+    {
+      applicationFieldId: "prior-employment,employer,state#1",
+      applicationFieldData: "NC",
+      applicationFieldSequence: 1
+    },
+    {
+      applicationFieldId: "prior-employment,employer,postal-code#1",
+      applicationFieldData: "27540",
+      applicationFieldSequence: 1
+    },
+    {
+      applicationFieldId: "prior-employment,employer,name#2",
+      applicationFieldData: "Prior Employer Name #2",
+      applicationFieldSequence: 2
+    },
+    {
+      applicationFieldId: "prior-employment,employer,address#2",
+      applicationFieldData: "Prior Employer address #2",
+      applicationFieldSequence: 2
+    },
+    {
+      applicationFieldId: "prior-employment,employer,city#2",
+      applicationFieldData: "Vass",
+      applicationFieldSequence: 2
+    },
+    {
+      applicationFieldId: "prior-employment,employer,state#2",
+      applicationFieldData: "NC",
+      applicationFieldSequence: 2
+    },
+    {
+      applicationFieldId: "prior-employment,employer,postal-code#2",
+      applicationFieldData: "28394",
+      applicationFieldSequence: 2
+    },
+    {
+      applicationFieldId: "prior-employment,employer,name#3",
+      applicationFieldData: "Prior Employer Name #3",
+      applicationFieldSequence: 3
+    },
+    {
+      applicationFieldId: "prior-employment,employer,address#3",
+      applicationFieldData: "Prior Employer address #3",
+      applicationFieldSequence: 3
+    },
+    {
+      applicationFieldId: "prior-employment,employer,city#3",
+      applicationFieldData: "Raleigh",
+      applicationFieldSequence: 3
+    },
+    {
+      applicationFieldId: "prior-employment,employer,state#3",
+      applicationFieldData: "NC",
+      applicationFieldSequence: 3
+    },
+    {
+      applicationFieldId: "prior-employment,employer,postal-code#3",
+      applicationFieldData: "27615",
+      applicationFieldSequence: 3
     }
   ]
 };
